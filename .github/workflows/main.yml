@@ -23,3 +23,5 @@ jobs:
         with:
           path: "requirements.txt"  
       - run: make update
+      - name: push
+        uses: actions-x/commit@v2
