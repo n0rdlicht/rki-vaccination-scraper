@@ -1,0 +1,128 @@
+{
+  "bytes": 23695,
+  "count_of_rows": 510,
+  "hash": "f4ff27522798827341a9ff39d16e2a7f",
+  "homepage": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html",
+  "name": "vaccinations",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "de-vaccinations",
+      "path": "de-vaccinations.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "format": "default",
+            "name": "geo",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "iso-cc",
+            "type": "any"
+          },
+          {
+            "constraints": {
+              "enum": [
+                "state",
+                "nation"
+              ]
+            },
+            "format": "default",
+            "name": "geotype",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 23695,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "d81d1a3c6a76299da9f31f0d0acfd7b4",
+      "name": "de-vaccinations",
+      "path": "data/de-vaccinations.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "format": "default",
+            "name": "geo",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "iso-cc",
+            "type": "any"
+          },
+          {
+            "constraints": {
+              "enum": [
+                "state",
+                "nation"
+              ]
+            },
+            "format": "default",
+            "name": "geotype",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Vaccinations"
+}

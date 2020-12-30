@@ -1,0 +1,142 @@
+vaccination:
+  title: Vaccination Number Scraper
+  description: Published Vaccination Number Scraper
+  environment:
+    DEBUG: true
+  pipeline:
+    -
+      run: update_package
+      parameters:
+        name: 'vaccinations'
+        title: 'Vaccinations'
+        homepage: 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html'
+    -
+      run: load
+      parameters:
+        from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
+        # from: "/Users/twesterhuys/Downloads/Impfquotenmonitoring.xlsx;jsessionid=1B0FFCFF58CB52837B72C0BB036E7D7D.internet122.xlsx"
+        name: 'de-vaccinations-current'
+        format: xlsx
+        sheet: 'Presse'
+        skip_rows:
+          -
+            type: preset
+            value: blank
+          - "*"
+          - "Anmerkung"
+    -
+      flow: flows.insert_date
+    -
+      run: add_computed_field
+      parameters:
+        fields:
+          -
+            target: "geo"
+            operation: format
+            with: "{Bundesland}"
+          -
+            target: "iso-cc"
+            operation: constant
+            with: "DE"
+    -
+      run: find_replace
+      parameters:
+        resources: de-vaccinations-current
+        fields:
+          -
+            name: geo
+            patterns:
+              -
+                find: (\*)
+                replace: ''
+              -
+                find: (Gesamt)
+                replace: 'Germany'
+    -
+      flow: flows.insert_geotype
+    -
+      run: delete_fields
+      parameters:
+        resources: de-vaccinations-current
+        fields:
+          - Bundesland
+    -
+      run: unpivot
+      parameters:
+        resources: de-vaccinations-current
+        extraKeyFields:
+          -
+            name: key
+            type: string
+        extraValueField:
+          name: value
+          type: number
+        unpivot:
+          -
+            name: "Impfungen kumulativ"
+            keys:
+              key: "sum"
+          -
+            name: "Differenz zum Vortag"
+            keys:
+              key: "delta_vortag"
+          -
+            name: "Indikation nach Alter\\*"
+            keys:
+              key: "ind_alter"
+          -
+            name: "Berufliche Indikation\\*"
+            keys:
+              key: "ind_prof"
+          -
+            name: "Medizinische Indikation\\*"
+            keys:
+              key: "ind_med"
+          -
+            name: "Pflegeheim-bewohnerIn\\*"
+            keys:
+              key: "ind_pflege"
+    -
+      run: load
+      parameters:
+        from: "data/de-vaccinations.csv"
+        name: 'de-vaccinations'
+    -
+      run: concatenate
+      parameters:
+        target:
+          name: de-vaccinations
+          path: de-vaccinations.csv
+        fields:
+          date: []
+          geo: []
+          geotype: []
+          iso-cc: []
+          key: []
+          value: []
+    -
+      run: join
+      parameters:
+        source: 
+          name: de-vaccinations
+          key: ["date","geo","key"]
+        target: 
+          name: de-vaccinations
+          key: null
+        fields:
+          date:
+            name: date
+          geo:
+            name: geo
+          iso-cc:
+            name: iso-cc
+          geotype:
+            name: geotype
+          key:
+            name: key
+          value:
+            name: value
+    -
+      run: dump_to_path
+      parameters:
+          out-path: data/

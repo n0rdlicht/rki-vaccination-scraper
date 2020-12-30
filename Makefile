@@ -1,0 +1,2 @@
+update:
+	dpp run ./vaccination
