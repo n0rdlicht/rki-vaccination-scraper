@@ -17,7 +17,7 @@ vaccination:
         # from: "/Users/twesterhuys/Downloads/Impfquotenmonitoring.xlsx;jsessionid=1B0FFCFF58CB52837B72C0BB036E7D7D.internet122.xlsx"
         name: 'de-vaccinations-current'
         format: xlsx
-        sheet: 'Presse'
+        sheet: -1
         skip_rows:
           -
             type: preset
