@@ -1,7 +1,7 @@
 {
-  "bytes": 23695,
-  "count_of_rows": 510,
-  "hash": "f4ff27522798827341a9ff39d16e2a7f",
+  "bytes": 28518,
+  "count_of_rows": 612,
+  "hash": "c72eba594caff00f67e3e8229267b630",
   "homepage": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html",
   "name": "vaccinations",
   "profile": "data-package",
@@ -24,11 +24,6 @@
       "schema": {
         "fields": [
           {
-            "format": "%Y-%m-%d",
-            "name": "date",
-            "type": "date"
-          },
-          {
             "format": "default",
             "name": "geo",
             "type": "string"
@@ -60,12 +55,17 @@
             "groupChar": "",
             "name": "value",
             "type": "number"
+          },
+          {
+            "format": "%Y-%m-%d",
+            "name": "date",
+            "type": "date"
           }
         ]
       }
     },
     {
-      "bytes": 23695,
+      "bytes": 28518,
       "dialect": {
         "delimiter": ",",
         "doubleQuote": true,
@@ -76,17 +76,12 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "d81d1a3c6a76299da9f31f0d0acfd7b4",
+      "hash": "7c9a10ceb38539d257d65e327c4ca384",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
-          {
-            "format": "%Y-%m-%d",
-            "name": "date",
-            "type": "date"
-          },
           {
             "format": "default",
             "name": "geo",
@@ -119,6 +114,11 @@
             "groupChar": "",
             "name": "value",
             "type": "number"
+          },
+          {
+            "format": "%Y-%m-%d",
+            "name": "date",
+            "type": "date"
           }
         ]
       }
