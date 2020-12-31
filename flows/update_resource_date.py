@@ -1,4 +1,4 @@
-from dataflows import Flow, add_computed_field
+from dataflows import Flow, update_resource
 from datetime import datetime, timedelta
 import requests
 
@@ -10,9 +10,8 @@ except:
 
 def flow(parameters, *args):
     return Flow(
-        add_computed_field(target=dict(name='date',type='date'),
-                            operation=lambda row: datetime.strftime(date, '%Y-%m-%d'),
-                            resources=parameters["resources"]
+        update_resource(resources=parameters["resources"],
+                        last_update=datetime.strftime(date, '%Y-%m-%dT%H:%M')
         )
     )
 

@@ -94,6 +94,10 @@ vaccination:
             name: "Pflegeheim-bewohnerIn\\*"
             keys:
               key: "ind_pflege"
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations-current"]
     -
       run: dump_to_path
       parameters:
@@ -207,6 +211,10 @@ vaccination-archive:
     #   parameters:
     #     from: "data/de-vaccinations-current.csv"
     #     name: 'de-vaccinations'
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations"]
     -
       run: dump_to_path
       parameters:
