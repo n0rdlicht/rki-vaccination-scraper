@@ -8,6 +8,33 @@ Project to archive the [state level vaccination data](https://www.rki.de/DE/Cont
 
 Experimental visualization: [Observable Notebook](https://observablehq.com/@n0rdlicht/vaccination-tracker-germany)
 
+## API
+
+A simple Vercel-hosted API is available at [api.vaccination-tracker.app](https://api.vaccination-tracker.app).
+
+A plain request will respond with the full dataset, paginated with 1000 entries per page.
+
+- For additional pages add `?page=2` or higher
+- For different paginations add `?per_page=100` for 100 entries per response
+- To filter by value use `?<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
+    - `sum`: All vaccinations
+    - `ind_age`: Indication by age
+    - `ind_med`: Indication by medical condition
+    - `ind_prof`: Indication by profession
+    - `ind_pflege`: Indication by residents of nursing homes
+    - `value`
+    - `geo`: German state name or `Germany` for national data
+    - `geotype`: either `state` for all states or `nation` for `Germany` entries
+    - `date`: unix timestamp of entry
+
+Example request for all vaccinations by medical condition in the state of Baveria:
+
+```sh
+twesterhuys@book ~ % curl --request GET 'https://api.vaccination-tracker.app/?key=ind_med&geo=Bayern'
+
+{"time": "2020-12-31T16:01:44","last_update": "2020-12-30T00:00","applied_filter": [{'geo': 'Bayern'}, {'key': 'ind_med'}], "per_page": 1000, "page": 0,"data": [{"geo":"Bayern","iso-cc":"DE","geotype":"state","key":"ind_med","value":68.0,"date":1609027200000},{"geo":"Bayern","iso-cc":"DE","geotype":"state","key":"ind_med","value":91.0,"date":1609113600000},{"geo":"Bayern","iso-cc":"DE","geotype":"state","key":"ind_med","value":214.0,"date":1609200000000},{"geo":"Bayern","iso-cc":"DE","geotype":"state","key":"ind_med","value":424.0,"date":1609286400000}]}
+```
+
 ## Technical setup
 
 1. Daily [GitHub Action](.github/workflows/main.yml) running a Frictionless Data Package Pipeline as defined in [pipeline-spec.yaml](pipeline-spec.yaml). Currently run manually, to be automated based on changes to [RKI website](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html)

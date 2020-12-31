@@ -1,6 +1,5 @@
 {
     "routes": [
-        {"src": "/", "dest": "https://vaccination-tracker.app"},
-        {"src": "/api", "dest": "api/server.py", "methods": ["GET"]}
+        {"src": "/", "dest": "api/server.py", "methods": ["GET"]}
     ]
   }
