@@ -13,7 +13,7 @@ def get_paginated_json(df, per_page, page):
 @app.route('/api')
 def api():
     try:
-        per_page = int(request.args.get('per_page', 10))
+        per_page = int(request.args.get('per_page', 1000))
     except:
         per_page = 1000
 
