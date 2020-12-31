@@ -1,11 +1,11 @@
 from dataflows import Flow, add_computed_field
 from datetime import datetime, timedelta
 
-def flow(*args):
+def flow(parameters, *args):
     return Flow(
         add_computed_field(target=dict(name='date',type='date'),
                             operation=lambda row: datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d'),
-                            resources='de-vaccinations-current'
+                            resources=parameters["resources"]
         )
     )
 

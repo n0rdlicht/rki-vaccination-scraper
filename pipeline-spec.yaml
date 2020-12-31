@@ -5,12 +5,6 @@ vaccination:
     DEBUG: true
   pipeline:
     -
-      run: update_package
-      parameters:
-        name: 'vaccinations'
-        title: 'Vaccinations'
-        homepage: 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html'
-    -
       run: load
       parameters:
         from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
@@ -24,6 +18,12 @@ vaccination:
             value: blank
           - "*"
           - "Anmerkung"
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-vaccinations-current"]
+        metadata:
+          path: 'data/de-vaccinations-current.csv'
     -
       run: add_computed_field
       parameters:
@@ -97,20 +97,81 @@ vaccination:
     -
       run: dump_to_path
       parameters:
-          out-path: data/
+        counters:
+          datapackage-rowcount: null
+          datapackage-bytes: null
+          datapackage-hash: null
+          resource-rowcount: null
+          resource-bytes: null
+          resource-hash: null
+
+vaccination-archive:
+  title: Vaccination Aggregation
+  description: Archive Published Vaccination Number Scraper
+  dependencies:
     -
-      flow: flows.insert_date
+      pipeline: ./vaccination
+  environment:
+    DEBUG: true
+  pipeline:
+    - 
+      run: load
+      parameters:
+        from: datapackage.json
+    -
+      run: update_package
+      parameters:
+        name: 'covid19-vaccinations-germany'
+        title: 'COVID-19 Vaccination Rates in Germany'
+        homepage: 'https://github.com/n0rdlicht/rki-vaccination-scraper'
+        keywords:
+          - "COVID-19"
+          - "RKI"
+          - "Germany"
+          - "Vaccination"
+        sources: 
+          -
+            title: "RKI Digitales Impfquotenmonitoring"
+            path: 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html'
+        contributors:
+          -
+            title: "Thorben Westerhuys"
+            role: "maintainer"
+            path: "https://github.com/n0rdlicht"
+        license: "ODC-PDDL-1.0"
+        licenses:
+          -
+            name: "ODC-PDDL-1.0"
+            path: "http://opendatacommons.org/licenses/pddl/"
+            title: "Open Data Commons Public Domain Dedication and License v1.0"
     -
       run: load
       parameters:
         from: "data/de-vaccinations.csv"
         name: 'de-vaccinations'
     -
+      run: update_resource
+      parameters:
+        resources: ["de-vaccinations"]
+        metadata:
+          path: 'data/de-vaccinations.csv'
+    -
+      run: duplicate
+      parameters:
+        source: "de-vaccinations-current"
+        target-name: "de-vaccinations-current-dated"
+        target-path: "data/de-vaccinations-current-dated.csv"
+    -
+      flow: flows.insert_date
+      parameters:
+        resources: "de-vaccinations-current-dated"
+    -
       run: concatenate
       parameters:
+        sources: ["de-vaccinations","de-vaccinations-current-dated"]
         target:
           name: de-vaccinations
-          path: de-vaccinations.csv
+          path: data/de-vaccinations.csv
         fields:
           date: []
           geo: []
@@ -124,6 +185,7 @@ vaccination:
         source: 
           name: de-vaccinations
           key: ["date","geo","key"]
+          delete: True
         target: 
           name: de-vaccinations
           key: null
@@ -140,7 +202,18 @@ vaccination:
             name: key
           value:
             name: value
+    # -
+    #   run: load
+    #   parameters:
+    #     from: "data/de-vaccinations-current.csv"
+    #     name: 'de-vaccinations'
     -
       run: dump_to_path
       parameters:
-          out-path: data/
+        counters:
+          datapackage-rowcount: null
+          datapackage-bytes: null
+          datapackage-hash: null
+          resource-rowcount: null
+          resource-bytes: null
+          resource-hash: null

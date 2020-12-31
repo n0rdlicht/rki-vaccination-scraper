@@ -1,26 +1,46 @@
 {
-  "bytes": 38124,
-  "count_of_rows": 816,
-  "hash": "1e47de30ea279d8e7e7dcc7be1660b56",
-  "homepage": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html",
-  "name": "vaccinations",
+  "contributors": [
+    {
+      "path": "https://github.com/n0rdlicht",
+      "role": "maintainer",
+      "title": "Thorben Westerhuys"
+    }
+  ],
+  "homepage": "https://github.com/n0rdlicht/rki-vaccination-scraper",
+  "keywords": [
+    "COVID-19",
+    "RKI",
+    "Germany",
+    "Vaccination"
+  ],
+  "license": "ODC-PDDL-1.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "name": "covid19-vaccinations-germany",
   "profile": "data-package",
   "resources": [
     {
       "dialect": {
+        "caseSensitiveHeader": false,
         "delimiter": ",",
         "doubleQuote": true,
+        "header": true,
         "lineTerminator": "\r\n",
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
+      "dpp:streamedFrom": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile",
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "mediatype": "text/csv",
-      "name": "de-vaccinations",
-      "path": "de-vaccinations.csv",
-      "profile": "data-resource",
+      "name": "de-vaccinations-current",
+      "path": "data/de-vaccinations-current.csv",
+      "profile": "tabular-data-resource",
       "schema": {
         "fields": [
           {
@@ -55,17 +75,14 @@
             "groupChar": "",
             "name": "value",
             "type": "number"
-          },
-          {
-            "format": "%Y-%m-%d",
-            "name": "date",
-            "type": "date"
           }
+        ],
+        "missingValues": [
+          ""
         ]
       }
     },
     {
-      "bytes": 38124,
       "dialect": {
         "delimiter": ",",
         "doubleQuote": true,
@@ -76,7 +93,6 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "77353f90ad546edfb539ec20fa731144",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
       "profile": "data-resource",
@@ -124,5 +140,11 @@
       }
     }
   ],
-  "title": "Vaccinations"
+  "sources": [
+    {
+      "path": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html",
+      "title": "RKI Digitales Impfquotenmonitoring"
+    }
+  ],
+  "title": "COVID-19 Vaccination Rates in Germany"
 }
