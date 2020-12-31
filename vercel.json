@@ -1,5 +1,8 @@
 {
     "routes": [
-        {"src": "/", "dest": "api/server.py", "methods": ["GET"]}
+        {"src": "/", "dest": "api/server.py", "methods": ["GET"], "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Access-Control-Allow-Methods", "value": "GET" }
+          ]}
     ]
   }
