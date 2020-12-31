@@ -1,5 +1,7 @@
 # RKI Vaccination Monitoring
 
+[![goodtables.io](https://goodtables.io/badge/github/n0rdlicht/rki-vaccination-scraper.svg)](https://goodtables.io/github/n0rdlicht/rki-vaccination-scraper)
+
 Project to archive the [state level vaccination data](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html) published by the Robert-Koch-Institut daily.
 
 🏗️ A work in progress.
