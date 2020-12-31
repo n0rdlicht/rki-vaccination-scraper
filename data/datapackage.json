@@ -1,7 +1,7 @@
 {
-  "bytes": 28518,
-  "count_of_rows": 612,
-  "hash": "c72eba594caff00f67e3e8229267b630",
+  "bytes": 38124,
+  "count_of_rows": 816,
+  "hash": "1e47de30ea279d8e7e7dcc7be1660b56",
   "homepage": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html",
   "name": "vaccinations",
   "profile": "data-package",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "bytes": 28518,
+      "bytes": 38124,
       "dialect": {
         "delimiter": ",",
         "doubleQuote": true,
@@ -76,7 +76,7 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "7c9a10ceb38539d257d65e327c4ca384",
+      "hash": "77353f90ad546edfb539ec20fa731144",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
       "profile": "data-resource",
