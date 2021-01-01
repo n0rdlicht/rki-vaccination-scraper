@@ -1,8 +1,12 @@
 {
-    "routes": [
-        {"src": "/", "dest": "api/server.py", "methods": ["GET"], "headers": [
-            { "key": "Access-Control-Allow-Origin", "value": "*" },
-            { "key": "Access-Control-Allow-Methods", "value": "GET" }
-          ]}
-    ]
-  }
+    "routes": [{
+        "src": "/",
+        "dest": "api/server.py",
+        "methods": ["GET"],
+        "headers": {
+                "Access-Control-Allow-Origin":"*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                "Access-Control-Allow-Methods":"GET"
+            }
+    }]
+}

@@ -5,7 +5,6 @@ from flask import Flask, Response, request
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 data = read_datapackage("")
 
@@ -14,6 +13,7 @@ def get_paginated_json(df, per_page, page):
 
 @app.route('/')
 @app.route('/api')
+@cross_origin()
 def api():
     try:
         per_page = int(request.args.get('per_page', 1000))
