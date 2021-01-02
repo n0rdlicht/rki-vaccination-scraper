@@ -27,6 +27,8 @@ def api():
         page = 1
 
     df = data.copy()["de-vaccinations"]
+    last_update = df._metadata['last_update']
+    last_published = df._metadata['last_published']
     dpf = []
     for fld in df._metadata['schema']['fields']:
         fn = fld['name']
@@ -43,9 +45,9 @@ def api():
                 pass
 
     return Response(
-        '{"time": "%s","last_update": %s,"last_published":%s,"applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),
-        json.dumps(df._metadata["last_update"]),
-        json.dumps(df._metadata["last_published"]),
+        '{"time": "%s","last_update": "%s","last_published": "%s","applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),
+        last_update,
+        last_published,
         json.dumps(dpf),
         per_page, 
         page, 
