@@ -10,7 +10,7 @@ cors = CORS(app)
 data = read_datapackage("")
 
 def get_paginated_json(df, per_page, page):
-    return df[page:page+per_page].to_json(orient='records')
+    return df[page:page+per_page].to_json(orient='records',date_format='iso')
 
 @app.route('/')
 @app.route('/api')
