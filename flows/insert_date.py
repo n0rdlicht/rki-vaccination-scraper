@@ -1,10 +1,11 @@
 from dataflows import Flow, add_computed_field
 from datetime import datetime, timedelta
+from dateutil import parser
 import requests
 
 try:
     r = requests.get('https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile')
-    date = datetime.strptime(r.headers["Last-Modified"],"%a, %d %b %Y %I:%M:%S GMT") - timedelta(1)
+    date = parser.parse(r.headers["Last-Modified"]) - timedelta(1)
 except:
     date = datetime.now() - timedelta(1)
 

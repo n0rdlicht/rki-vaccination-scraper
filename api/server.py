@@ -1,5 +1,6 @@
 from pandas_datapackage_reader import read_datapackage
 from datetime import datetime
+import json
 
 from flask import Flask, Response, request
 from flask_cors import CORS, cross_origin
@@ -42,6 +43,6 @@ def api():
                 pass
 
     return Response(
-        '{"time": "%s","last_update": "2020-12-30T00:00","applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),dpf,per_page, page, get_paginated_json(df,per_page,page)),
+        '{"time": "%s","last_update": "2020-12-30T00:00","applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),json.dumps(dpf),per_page, page, get_paginated_json(df,per_page,page)),
         mimetype='application/json',
         status=200)

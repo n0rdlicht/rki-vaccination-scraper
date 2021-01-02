@@ -1,17 +1,21 @@
 from dataflows import Flow, update_resource
 from datetime import datetime, timedelta
+from dateutil import parser
 import requests
 
 try:
     r = requests.get('https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile')
-    date = datetime.strptime(r.headers["Last-Modified"],"%a, %d %b %Y %I:%M:%S GMT") - timedelta(1)
+    date = parser.parse(r.headers["Last-Modified"])
 except:
-    date = datetime.now() - timedelta(1)
+    date = datetime.now()
 
 def flow(parameters, *args):
     return Flow(
         update_resource(resources=parameters["resources"],
-                        last_update=datetime.strftime(date, '%Y-%m-%dT%H:%M')
+                        last_update=datetime.strftime(date - timedelta(1), '%Y-%m-%dT%H:%M')
+        ),
+        update_resource(resources=parameters["resources"],
+                        last_published=datetime.strftime(date, '%Y-%m-%dT%H:%M')
         )
     )
 
