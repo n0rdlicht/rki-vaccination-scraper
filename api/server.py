@@ -43,6 +43,12 @@ def api():
                 pass
 
     return Response(
-        '{"time": "%s","last_update": "2020-12-30T00:00","applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),json.dumps(dpf),per_page, page, get_paginated_json(df,per_page,page)),
+        '{"time": "%s","last_update": %s,"last_published":%s,"applied_filter": %s, "per_page": %i, "page": %i,"data": %s}' % (datetime.today().strftime('%Y-%m-%dT%H:%M:%S'),
+        json.dumps(df._metadata["last_update"]),
+        json.dumps(df._metadata["last_published"]),
+        json.dumps(dpf),
+        per_page, 
+        page, 
+        get_paginated_json(df,per_page,page)),
         mimetype='application/json',
         status=200)
