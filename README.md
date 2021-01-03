@@ -16,15 +16,15 @@ Experimental visualization: [Observable Notebook](https://observablehq.com/@n0rd
 
 ## Table of content
 
-* [The API](#The-API)
-    * [Example](#Example)
+* [The API](#the-api)
+    * [Example](#example)
 
-* [The Data Package](#The-Data-Package)
-    * [Updating the data](#Updating-the-data)
+* [The Data Package](#the-data-package)
+    * [Updating the data](#updating-the-data)
 
 ## The API
 
-A simple Vercel-hosted API is available at [api.vaccination-tracker.app/v1](https://api.vaccination-tracker.app/v1).
+A simple Vercel-hosted API is available at [api.vaccination-tracker.app/v1/](https://api.vaccination-tracker.app/v1).
 
 A plain request will respond with the full dataset `de-vaccinations`, paginated with 1000 entries per page.
 
