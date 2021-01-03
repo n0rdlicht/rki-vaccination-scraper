@@ -192,21 +192,6 @@ vaccination-archive:
     -
       run: load
       parameters:
-        from: "data/de-vaccinations.csv"
-        name: 'de-vaccinations'
-    -
-      run: update_resource
-      parameters:
-        resources: ["de-vaccinations"]
-        metadata:
-          path: 'data/de-vaccinations.csv'
-    - 
-      flow: flows.update_resource_date
-      parameters:
-        resources: ["de-vaccinations"]
-    -
-      run: load
-      parameters:
         from: "data/de-vaccinations-current.csv"
         name: 'de-vaccinations-current'
     -
@@ -220,6 +205,21 @@ vaccination-archive:
       parameters:
         resources: ["de-vaccinations-current"]
     -
+      run: load
+      parameters:
+        from: "data/de-vaccinations.csv"
+        name: 'de-vaccinations'
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-vaccinations"]
+        metadata:
+          path: 'data/de-vaccinations.csv'
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations"]
+    -
       run: duplicate
       parameters:
         source: "de-vaccinations-current"
@@ -230,14 +230,9 @@ vaccination-archive:
       parameters:
         resources: "de-vaccinations-current-dated"
     -
-      flow: flows.concat
-      parameters:
-        resources: ["de-vaccinations","de-vaccinations-current-dated"]
-    -
       run: concatenate
       parameters:
-        source-delete: false
-        resources: ["de-vaccinations","de-vaccinations-current-dated"]
+        sources: ["de-vaccinations","de-vaccinations-current-dated"]
         target:
           name: de-vaccinations
           path: data/de-vaccinations.csv
@@ -248,29 +243,49 @@ vaccination-archive:
           iso-cc: []
           key: []
           value: []
+          population: []
+          quote: []
     -
-      run: join
+      flow: flows.set_primary_key
       parameters:
-        source: 
-          name: de-vaccinations
-          key: ["date","geo","key"]
-          delete: True
-        target: 
-          name: de-vaccinations
-          key: null
-        fields:
-          date:
-            name: date
-          geo:
-            name: geo
-          iso-cc:
-            name: iso-cc
-          geotype:
-            name: geotype
-          key:
-            name: key
-          value:
-            name: value
+        resources: ["de-vaccinations"]
+        primary-key: ["date","geo","key"]
+    -
+      run: deduplicate
+      parameters:
+        resources: de-vaccinations
+    -
+      run: sort
+      parameters:
+        resources: de-vaccinations
+        sort-by: "{date}"
+    # -
+    #   run: join
+    #   parameters:
+    #     source: 
+    #       name: de-vaccinations
+    #       key: ["date","geo","key"]
+    #       delete: True
+    #     target: 
+    #       name: de-vaccinations
+    #       key: null
+    #     fields:
+    #       date:
+    #         name: date
+    #       geo:
+    #         name: geo
+    #       iso-cc:
+    #         name: iso-cc
+    #       geotype:
+    #         name: geotype
+    #       key:
+    #         name: key
+    #       value:
+    #         name: value
+    #       population:
+    #         name: population
+    #       quote:
+    #         name: quote
     -
       run: dump_to_path
       parameters:
