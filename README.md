@@ -1,7 +1,8 @@
 ---
 home: true
+title: Guide
 sidebar: auto
-lang: en-EN
+lang: en-US
 footer: Made with ❤️ in Hamburg/Zurich
 ---
 
@@ -19,36 +20,43 @@ Experimental visualization: [Observable Notebook](https://observablehq.com/@n0rd
 
 ## The API
 
-A simple Vercel-hosted API is available at [api.vaccination-tracker.app/v1/](https://api.vaccination-tracker.app/v1).
+A simple Vercel-hosted API is available at [api.vaccination-tracker.app/v1/](https://api.vaccination-tracker.app/v1/).
 
 A plain request will respond with the full dataset `de-vaccinations`, paginated with 1000 entries per page.
 
-- Data Package **Resources**: resources listed in [datapackage.json](datapackage.json) are exposed and can be accesses via
+### Resources
 
-    ```sh
-    GET https://api.vaccination-tracker.app/v1/<resource-name>
-    ```
-    e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently available sets:
-    - `de-vaccinations`: historized data as json
-    - `de-vaccination-curren`: currently published version as json
-- **Pagination**: `page=2` & `per_page=100` (defaults: `1` and `1000`)
-- **Filter** by column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
-    - `sum`: All vaccinations
-    - `ind_alter`: Indication by age
-    - `ind_med`: Indication by medical condition
-    - `ind_prof`: Indication by profession
-    - `ind_pflege`: Indication by residents of nursing homes
-    - `value`
-    - `geo`: German state name or `Germany` for national data
-    - `geotype`: either `state` for all states or `nation` for `Germany` entries
-    - *Note: filtering by `date` is not supported yet*
+Data Package **Resources**: resources listed in [datapackage.json](datapackage.json) are exposed and can be accesses via
+
+```sh
+GET https://api.vaccination-tracker.app/v1/<resource-name>
+```
+e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently available sets:
+- `de-vaccinations`: historized data as json
+- `de-vaccination-curren`: currently published version as json
+
+### Pagination
+Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
+
+### Filter
+By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
+
+- `sum`: All vaccinations
+- `ind_alter`: Indication by age
+- `ind_med`: Indication by medical condition
+- `ind_prof`: Indication by profession
+- `ind_pflege`: Indication by residents of nursing homes
+- `value`
+- `geo`: German state name or `Germany` for national data
+- `geotype`: either `state` for all states or `nation` for `Germany` entries
+- *Note: filtering by `date` is not supported yet*
 
 ### Example
 
 Example request and response for all vaccinations by medical condition and publishing date in the state of Baveria:
 
 ```sh
-twesterhuys@book ~ % curl --request GET 'https://api.vaccination-tracker.app/?key=ind_med&geo=Bayern'
+twesterhuys@book ~ % curl --request GET 'https://api.vaccination-tracker.app/v1/de-vaccinations?key=ind_med&geo=Bayern'
 
 {
   "dataset": "de-vaccinations",

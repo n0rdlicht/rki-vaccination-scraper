@@ -1,36 +1,30 @@
 <template>
-<div class="dark-mode-widget">
-    <input type="checkbox" id="theme-toggle" @click="toggleDarkTheme"></input>
-    <label for="theme-toggle"><span></span></label>
-</div>
+    <div></div>
 </template>
 
 <script>
 export default {
 mounted() {
     this.checkUserPreference();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const body = document.body;
+        console.log(e);
+        if(e.matches && body.classList.contains("dark-mode")){
+            
+        }
+        else if(e.matches) {
+            document.body.classList.add("dark-mode");
+        }
+        else {
+            document.body.classList.remove("dark-mode");
+        }
+    });
 },
 methods: {
-    toggleDarkTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    //If dark mode is selected
-    if (body.classList.contains("dark-mode")) {
-        //Save user preference in storage
-        localStorage.setItem("dark-theme", "true");
-    //If light mode is selected
-    } else {
-        body.classList.remove("dark-mode");
-        setTimeout(function() {
-        localStorage.removeItem("dark-theme");
-        }, 100);
-    }
-    },
     checkUserPreference(){
         //Check Storage on Page load. Keep user preference through sessions
-        if (localStorage.getItem("dark-theme")) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add("dark-mode");
-            document.getElementById('theme-toggle').checked = true;
         }
     }
 }
@@ -42,12 +36,22 @@ methods: {
     display: table;
     margin: 1em auto;
 }
-body.dark-mode {
-    background: #333;
+header.navbar, header.navbar .links, header.navbar div.links, body.dark-mode {
+    background: #131313;
 }
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
+header.navbar .site-name, header.navbar a, body.dark-mode, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
     color: #f1f1f1
 }
+header.navbar {
+    border-bottom: 1px solid #131313;
+}
+body.dark-mode .theme-default-content code, body.dark-mode .home .hero .description {
+    color: #308fe7;
+}
+body.dark-mode .theme-default-content pre code {
+    color: #fff;
+}
+
 #theme-toggle {
     display: none;
 }
