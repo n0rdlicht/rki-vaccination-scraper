@@ -38,6 +38,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
+      "last_published": "2020-06-19",
+      "last_update": "2019-12-31",
       "name": "de-population-current",
       "path": "data/de-population-current.csv",
       "profile": "tabular-data-resource",
