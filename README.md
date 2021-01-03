@@ -1,3 +1,9 @@
+---
+home: true
+lang: en-EN
+footer: Made with ❤️ in Hamburg/Zurich
+---
+
 # RKI Vaccination Monitoring
 
 [![goodtables.io](https://goodtables.io/badge/github/n0rdlicht/rki-vaccination-scraper.svg)](https://goodtables.io/github/n0rdlicht/rki-vaccination-scraper)

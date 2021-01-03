@@ -1,0 +1,25 @@
+{
+  "name": "datapackage-api",
+  "version": "1.0.0",
+  "description": "A simple REST API for serving Data Packages",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0rdlicht/rki-vaccination-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n0rdlicht/rki-vaccination-scraper/issues"
+  },
+  "homepage": "api.vaccination-tracker.app",
+  "dependencies": {
+    "vuepress": "^1.5.0"
+  }
+}
