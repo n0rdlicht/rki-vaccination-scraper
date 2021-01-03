@@ -36,10 +36,10 @@ methods: {
     display: table;
     margin: 1em auto;
 }
-header.navbar, header.navbar .links, header.navbar div.links, body.dark-mode {
+body.dark-mode header.navbar, body.dark-mode header.navbar .links, body.dark-mode header.navbar div.links, body.dark-mode, body.dark-mode aside.sidebar {
     background: #131313;
 }
-header.navbar .site-name, header.navbar a, body.dark-mode, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
+body.dark-mode header.navbar .site-name, body.dark-mode header.navbar a, body.dark-mode aside.sidebar a, body.dark-mode, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
     color: #f1f1f1
 }
 header.navbar {
@@ -51,6 +51,7 @@ body.dark-mode .theme-default-content code, body.dark-mode .home .hero .descript
 body.dark-mode .theme-default-content pre code {
     color: #fff;
 }
+
 
 #theme-toggle {
     display: none;
