@@ -1,7 +1,7 @@
 {
     "routes": [{
-        "src": "/",
-        "dest": "api/server.py",
+        "src": "/v1/(.*)",
+        "dest": "api/v1.py",
         "methods": ["GET"],
         "headers": {
                 "Access-Control-Allow-Origin":"*",
