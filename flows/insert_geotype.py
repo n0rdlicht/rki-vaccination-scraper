@@ -1,10 +1,10 @@
 from dataflows import Flow, add_computed_field
 
-def flow(*args):
+def flow(parameters, *args):
     return Flow(
         add_computed_field(target=dict(name='geotype',type='string',constraints=dict(enum=["state","nation"])),
                             operation=lambda row: (row['geo'] == 'Germany') and 'nation' or 'state',
-                            resources='de-vaccinations-current'
+                            resources=parameters["resources"]
         )
     )
 
