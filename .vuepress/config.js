@@ -4,6 +4,7 @@ module.exports = {
   dest: 'public',
   themeConfig: {
     search: true,
+    lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
         link: '/'

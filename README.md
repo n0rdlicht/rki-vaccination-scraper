@@ -1,5 +1,6 @@
 ---
 home: true
+sidebar: auto
 lang: en-EN
 footer: Made with ❤️ in Hamburg/Zurich
 ---
@@ -15,14 +16,6 @@ Project to archive and track the [state level vaccination data](https://www.rki.
 🏗️ A work in progress.
 
 Experimental visualization: [Observable Notebook](https://observablehq.com/@n0rdlicht/vaccination-tracker-germany)
-
-## Table of content
-
-* [The API](#the-api)
-    * [Example](#example)
-
-* [The Data Package](#the-data-package)
-    * [Updating the data](#updating-the-data)
 
 ## The API
 
