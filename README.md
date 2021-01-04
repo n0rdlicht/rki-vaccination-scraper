@@ -35,10 +35,14 @@ e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently ava
 - `de-vaccinations`: historized data as json
 - `de-vaccination-curren`: currently published version as json
 
+### Changelog
+
+- Jan 4, 2021: Adds `quote` and `population` fields for comparison between different `geo`'s
+
 ### Pagination
 Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
 
-### Filter
+### Filter / Values for `de-vaccinations` and `de-vaccinations-current`
 By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
 
 - `sum`: All vaccinations
@@ -49,7 +53,9 @@ By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery valu
 - `value`
 - `geo`: German state name or `Germany` for national data
 - `geotype`: either `state` for all states or `nation` for `Germany` entries
-- *Note: filtering by `date` is not supported yet*
+- `population`: number of residents in `geo`
+- `quote`: rate of vaccination per 100, *only on entries with where `key` is `sum`*
+- *Note: filtering by `date` is not supported yet and only available in de-vaccinations*
 
 ### Example
 

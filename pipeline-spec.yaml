@@ -129,6 +129,10 @@ vaccination:
       flow: flows.quote
       parameters:
         resources: de-vaccinations-current
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations"]
     -
       run: dump_to_path
       parameters:
