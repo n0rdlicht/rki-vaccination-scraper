@@ -6,10 +6,12 @@
 // Vaccine API by @twesterhuys / https://github.com/n0rdlicht
 
 // Set a state manually
-const state = "Hamburg" // or "Germany", "Schleswig-Holstein", "Nordrhein-Westpfahlen", ...
+const state = "Baden-Württemberg" // or "Germany", "Schleswig-Holstein", "Nordrhein-Westpfahlen", ...
 
 // Vaccination API
-const vaccineStatus = "https://api.vaccination-tracker.app/v1/de-vaccinations-current?geo=" + state;
+const vaccineStatus = encodeURI("https://api.vaccination-tracker.app/v1/de-vaccinations-current?geo=" + state);
+
+console.log(vaccineStatus)
 
 // Initialize Widget
 let widget = await createWidget();
@@ -103,7 +105,12 @@ async function getVaccineData() {
       values["quote"] = row["quote"];
     }
     if(row["key"] == "sum" || row["key"] == "delta_vortag"){
-      values[row["key"]] = row["value"];
+      if(row["value"]) {
+        values[row["key"]] = row["value"];
+      }
+      else {
+        values[row["key"]] = "k.A.";
+      }
     }
   });
   return values;
