@@ -50,6 +50,7 @@ def api(dataset):
         df = data.copy()[dataset]
         last_update = df._metadata['last_update']
         last_published = df._metadata['last_published']
+        df_reset = df.copy().reset_index()
         dpf = []
         for fld in df._metadata['schema']['fields']:
             fn = fld['name']
@@ -60,7 +61,7 @@ def api(dataset):
             if q is not None:
                 try:
                     q = q.strip()
-                    df = df.loc[df[fn] == q]
+                    df_reset = df_reset.loc[df_reset[fn] == q]
                     dpf.append({fn:q})
                 except:
                     pass
@@ -74,7 +75,7 @@ def api(dataset):
                 "applied_filter": dpf, 
                 "per_page": per_page, 
                 "page": page,
-                "data": json.loads(get_paginated_json(df,per_page,page))
+                "data": json.loads(get_paginated_json(df_reset,per_page,page))
                 }),
             mimetype='application/json',
             status=200)

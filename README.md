@@ -35,10 +35,14 @@ e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently ava
 - `de-vaccinations`: historized data as json
 - `de-vaccination-curren`: currently published version as json
 
+### Changelog
+
+- Jan 4, 2021: Adds `quote` and `population` fields for comparison between different `geo`'s
+
 ### Pagination
 Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
 
-### Filter
+### Filter / Values for `de-vaccinations` and `de-vaccinations-current`
 By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
 
 - `sum`: All vaccinations
@@ -49,7 +53,9 @@ By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery valu
 - `value`
 - `geo`: German state name or `Germany` for national data
 - `geotype`: either `state` for all states or `nation` for `Germany` entries
-- *Note: filtering by `date` is not supported yet*
+- `population`: number of residents in `geo`
+- `quote`: rate of vaccination per 100, *only on entries with where `key` is `sum`*
+- *Note: filtering by `date` is not supported yet and only available in de-vaccinations*
 
 ### Example
 
@@ -60,9 +66,9 @@ twesterhuys@book ~ % curl --request GET 'https://api.vaccination-tracker.app/v1/
 
 {
   "dataset": "de-vaccinations",
-  "time": "2021-01-03T15:38:55",
-  "last_update": "2021-01-01T14:30",
-  "last_published": "2021-01-02T14:30",
+  "time": "2021-01-04T12:49:20",
+  "last_update": "2021-01-03T11:32",
+  "last_published": "2021-01-04T11:32",
   "applied_filter": [{
     "geo": "Bayern"
   }, {
@@ -71,47 +77,77 @@ twesterhuys@book ~ % curl --request GET 'https://api.vaccination-tracker.app/v1/
   "per_page": 1000,
   "page": 0,
   "data": [{
+    "date": "2020-12-27T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
-    "key": "ind_med",
-    "value": 68.0,
-    "date": "2020-12-27T00:00:00.000Z"
+    "value": 68,
+    "population": 13124737,
+    "quote": null
   }, {
+    "date": "2020-12-28T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
-    "key": "ind_med",
-    "value": 91.0,
-    "date": "2020-12-28T00:00:00.000Z"
+    "value": 91,
+    "population": 13124737,
+    "quote": null
   }, {
+    "date": "2020-12-29T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
-    "key": "ind_med",
-    "value": 214.0,
-    "date": "2020-12-29T00:00:00.000Z"
+    "value": 214,
+    "population": 13124737,
+    "quote": null
   }, {
+    "date": "2020-12-30T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
-    "key": "ind_med",
-    "value": 424.0,
-    "date": "2020-12-30T00:00:00.000Z"
+    "value": 424,
+    "population": 13124737,
+    "quote": null
   }, {
+    "date": "2020-12-31T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
-    "key": "ind_med",
-    "value": 718.0,
-    "date": "2020-12-31T00:00:00.000Z"
+    "value": 718,
+    "population": 13124737,
+    "quote": null
   }, {
+    "date": "2021-01-01T00:00:00.000Z",
     "geo": "Bayern",
+    "key": "ind_med",
     "iso-cc": "DE",
     "geotype": "state",
+    "value": 718,
+    "population": 13124737,
+    "quote": null
+  }, {
+    "date": "2021-01-02T00:00:00.000Z",
+    "geo": "Bayern",
     "key": "ind_med",
-    "value": 718.0,
-    "date": "2021-01-01T00:00:00.000Z"
+    "iso-cc": "DE",
+    "geotype": "state",
+    "value": 1091,
+    "population": 13124737,
+    "quote": null
+  }, {
+    "date": "2021-01-03T00:00:00.000Z",
+    "geo": "Bayern",
+    "key": "ind_med",
+    "iso-cc": "DE",
+    "geotype": "state",
+    "value": 1280,
+    "population": 13124737,
+    "quote": null
   }]
 }
 ```

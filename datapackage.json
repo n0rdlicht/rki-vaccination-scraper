@@ -34,7 +34,44 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile",
+      "dpp:streamedFrom": "data/de-population-current.csv",
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "last_published": "2020-06-19",
+      "last_update": "2019-12-31",
+      "name": "de-population-current",
+      "path": "data/de-population-current.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "geo",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "population",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "data/de-vaccinations-current.csv",
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
@@ -53,15 +90,9 @@
           {
             "format": "default",
             "name": "iso-cc",
-            "type": "any"
+            "type": "string"
           },
           {
-            "constraints": {
-              "enum": [
-                "state",
-                "nation"
-              ]
-            },
             "format": "default",
             "name": "geotype",
             "type": "string"
@@ -72,10 +103,20 @@
             "type": "string"
           },
           {
+            "format": "default",
+            "name": "value",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "population",
+            "type": "integer"
+          },
+          {
             "decimalChar": ".",
             "format": "default",
             "groupChar": "",
-            "name": "value",
+            "name": "quote",
             "type": "number"
           }
         ],
@@ -97,6 +138,7 @@
       "format": "csv",
       "last_published": "2021-01-04T11:32",
       "last_update": "2021-01-03T11:32",
+      "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
       "profile": "data-resource",
@@ -110,15 +152,9 @@
           {
             "format": "default",
             "name": "iso-cc",
-            "type": "any"
+            "type": "string"
           },
           {
-            "constraints": {
-              "enum": [
-                "state",
-                "nation"
-              ]
-            },
             "format": "default",
             "name": "geotype",
             "type": "string"
@@ -129,10 +165,20 @@
             "type": "string"
           },
           {
+            "format": "default",
+            "name": "value",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "population",
+            "type": "integer"
+          },
+          {
             "decimalChar": ".",
             "format": "default",
             "groupChar": "",
-            "name": "value",
+            "name": "quote",
             "type": "number"
           },
           {
@@ -140,6 +186,11 @@
             "name": "date",
             "type": "date"
           }
+        ],
+        "primaryKey": [
+          "date",
+          "geo",
+          "key"
         ]
       }
     }

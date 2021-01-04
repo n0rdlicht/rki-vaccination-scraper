@@ -7,8 +7,18 @@ vaccination:
     -
       run: load
       parameters:
+        from: "data/de-population-current.csv"
+        name: de-population-current
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-population-current"]
+        metadata:
+          path: "data/de-population-current.csv"
+    -
+      run: load
+      parameters:
         from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
-        # from: "/Users/twesterhuys/Downloads/Impfquotenmonitoring.xlsx;jsessionid=1B0FFCFF58CB52837B72C0BB036E7D7D.internet122.xlsx"
         name: 'de-vaccinations-current'
         format: xlsx
         sheet: 2
@@ -27,6 +37,7 @@ vaccination:
     -
       run: add_computed_field
       parameters:
+        resources: ["de-vaccinations-current"]
         fields:
           -
             target: "geo"
@@ -52,6 +63,8 @@ vaccination:
                 replace: 'Germany'
     -
       flow: flows.insert_geotype
+      parameters:
+        resources: ["de-vaccinations-current"]
     -
       run: delete_fields
       parameters:
@@ -100,6 +113,27 @@ vaccination:
       parameters:
         resources: ["de-vaccinations-current"]
     -
+      run: join
+      parameters:
+        source: 
+          name: de-population-current
+          key: ["geo"]
+        target: 
+          name: de-vaccinations-current
+          key: ["geo"]
+        fields:
+          population:
+            name: "population"
+        full: true
+    -
+      flow: flows.quote
+      parameters:
+        resources: de-vaccinations-current
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations"]
+    -
       run: dump_to_path
       parameters:
         counters:
@@ -119,10 +153,10 @@ vaccination-archive:
   environment:
     DEBUG: true
   pipeline:
-    - 
-      run: load
-      parameters:
-        from: datapackage.json
+    # - 
+    #   run: load
+    #   parameters:
+    #     from: datapackage.json
     -
       run: update_package
       parameters:
@@ -149,6 +183,34 @@ vaccination-archive:
             name: "ODC-PDDL-1.0"
             path: "http://opendatacommons.org/licenses/pddl/"
             title: "Open Data Commons Public Domain Dedication and License v1.0"
+    -
+      run: load
+      parameters:
+        from: "data/de-population-current.csv"
+        name: de-population-current
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-population-current"]
+        metadata:
+          path: "data/de-population-current.csv"
+          last_update: "2019-12-31"
+          last_published: "2020-06-19"
+    -
+      run: load
+      parameters:
+        from: "data/de-vaccinations-current.csv"
+        name: 'de-vaccinations-current'
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-vaccinations-current"]
+        metadata:
+          path: 'data/de-vaccinations-current.csv'
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations-current"]
     -
       run: load
       parameters:
@@ -184,38 +246,53 @@ vaccination-archive:
           iso-cc: []
           key: []
           value: []
+          population: []
+          quote: []
     -
-      run: join
+      flow: flows.set_primary_key
       parameters:
-        source: 
-          name: de-vaccinations
-          key: ["date","geo","key"]
-          delete: True
-        target: 
-          name: de-vaccinations
-          key: null
-        fields:
-          date:
-            name: date
-          geo:
-            name: geo
-          iso-cc:
-            name: iso-cc
-          geotype:
-            name: geotype
-          key:
-            name: key
-          value:
-            name: value
-    # -
-    #   run: load
-    #   parameters:
-    #     from: "data/de-vaccinations-current.csv"
-    #     name: 'de-vaccinations'
+        resources: ["de-vaccinations"]
+        primary-key: ["date","geo","key"]
+    -
+      run: deduplicate
+      parameters:
+        resources: de-vaccinations
+    -
+      run: sort
+      parameters:
+        resources: de-vaccinations
+        sort-by: "{date}"
     - 
       flow: flows.update_resource_date
       parameters:
         resources: ["de-vaccinations"]
+    # -
+    #   run: join
+    #   parameters:
+    #     source: 
+    #       name: de-vaccinations
+    #       key: ["date","geo","key"]
+    #       delete: True
+    #     target: 
+    #       name: de-vaccinations
+    #       key: null
+    #     fields:
+    #       date:
+    #         name: date
+    #       geo:
+    #         name: geo
+    #       iso-cc:
+    #         name: iso-cc
+    #       geotype:
+    #         name: geotype
+    #       key:
+    #         name: key
+    #       value:
+    #         name: value
+    #       population:
+    #         name: population
+    #       quote:
+    #         name: quote
     -
       run: dump_to_path
       parameters:
