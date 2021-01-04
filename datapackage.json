@@ -38,13 +38,20 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-03T11:41",
-      "last_update": "2021-01-02T11:41",
+      "last_published": "2021-01-04T11:32",
+      "last_update": "2021-01-03T11:32",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
       "schema": {
         "fields": [
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "Impfungen pro 1.000 Einwohner",
+            "type": "number"
+          },
           {
             "format": "default",
             "name": "geo",
@@ -95,8 +102,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-03T11:41",
-      "last_update": "2021-01-02T11:41",
+      "last_published": "2021-01-04T11:32",
+      "last_update": "2021-01-03T11:32",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
       "profile": "data-resource",
