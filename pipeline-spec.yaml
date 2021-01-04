@@ -71,6 +71,7 @@ vaccination:
         resources: de-vaccinations-current
         fields:
           - Bundesland
+          - Impfungen pro 1.000 Einwohner
     -
       run: unpivot
       parameters:
