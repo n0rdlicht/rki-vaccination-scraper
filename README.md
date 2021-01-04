@@ -35,7 +35,8 @@ GET https://api.vaccination-tracker.app/v1/<resource-name>
 ```
 e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently available sets:
 - `de-vaccinations`: historized data as json
-- `de-vaccination-curren`: currently published version as json
+- `de-vaccination-current`: currently published version as json
+- `de-population-current`: population data from DeStatis
 
 ### Changelog
 
