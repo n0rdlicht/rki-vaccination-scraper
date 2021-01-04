@@ -16,6 +16,8 @@ Project to archive and track the [state level vaccination data](https://www.rki.
 
 🏗️ A work in progress.
 
+<iframe width="100%" height="584" frameborder="0" src="https://observablehq.com/embed/@n0rdlicht/vaccination-tracker-germany?cell=viewof+geo&cell=viewof+indicator&cell=chart"></iframe>
+
 Experimental visualization: [Observable Notebook](https://observablehq.com/@n0rdlicht/vaccination-tracker-germany)
 
 ## The API
