@@ -222,10 +222,6 @@ vaccination-archive:
         resources: ["de-vaccinations"]
         metadata:
           path: 'data/de-vaccinations.csv'
-    - 
-      flow: flows.update_resource_date
-      parameters:
-        resources: ["de-vaccinations"]
     -
       run: duplicate
       parameters:
@@ -266,6 +262,10 @@ vaccination-archive:
       parameters:
         resources: de-vaccinations
         sort-by: "{date}"
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations"]
     # -
     #   run: join
     #   parameters:

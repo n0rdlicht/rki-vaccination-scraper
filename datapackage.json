@@ -136,6 +136,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
+      "last_published": "2021-01-04T11:32",
+      "last_update": "2021-01-03T11:32",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
