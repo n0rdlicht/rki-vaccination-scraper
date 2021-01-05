@@ -48,18 +48,24 @@ async function createWidget(items) {
   list.addSpacer(3);
 
   header = list.addText(state.toUpperCase());
-  header.font = Font.boldSystemFont(14);
+  header.textColor = new Color("FFFFFF");
+  if(state.length < 12){
+    header.font = Font.boldSystemFont(14);
+  } else {
+    header.font = Font.boldSystemFont(9);
+  }
 
   list.addSpacer(6);
 
   label = list.addText("+" + number.delta_vortag.toLocaleString() + "💉");
   label.font = Font.mediumSystemFont(24);
+  label.textColor = new Color("FFFFFF");
 
   let dF = new DateFormatter();
   dF.useMediumDateStyle();
   dF.useNoTimeStyle();
 
-  const since = list.addText("seit " + dF.string(new Date(number.updated)));
+  const since = list.addText("am " + dF.string(new Date(number.updated)));
   since.font = Font.mediumSystemFont(10);
   since.textColor = Color.gray();
 
@@ -67,9 +73,11 @@ async function createWidget(items) {
 
   header = list.addText("Impfquote".toUpperCase());
   header.font = Font.mediumSystemFont(12);
+  header.textColor = new Color("FFFFFF");
   
   label = list.addText(quote + "%");
   label.font = Font.mediumSystemFont(24);
+  label.textColor = new Color("FFFFFF");
 
   if (number.quote < 30) {
     label.textColor = Color.red();
