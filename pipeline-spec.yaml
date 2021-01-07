@@ -28,6 +28,7 @@ vaccination:
             value: blank
           - "*"
           - "Anmerkung"
+          - "RS:"
     -
       run: update_resource
       parameters:
@@ -72,6 +73,7 @@ vaccination:
         fields:
           - Bundesland
           - Impfungen pro 1.000 Einwohner
+          - RS
     -
       run: unpivot
       parameters:
