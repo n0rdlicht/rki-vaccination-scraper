@@ -3,7 +3,7 @@ name: Update Data Package
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-   - cron: '17,34,57 7-18 * * 1-5'
+   - cron: '17,34,57 7-18 * * 1-6'
 
   workflow_dispatch:
 
