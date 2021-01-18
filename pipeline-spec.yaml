@@ -148,12 +148,6 @@ de-vaccinations:
             source:
               - Erstimpfung Pflegeheim-bewohnerIn
               - Zweitimpfung Pflegeheim-bewohnerIn
-          -
-            target: "Impf-quote, %"
-            operation: sum
-            source:
-              - Erstimpfung Impf-quote, %
-              - Zweitimpfung Impf-quote, %
     -
       run: find_replace
       parameters:
@@ -232,10 +226,6 @@ de-vaccinations:
             name: "Zweitimpfung Differenz zum Vortag"
             keys:
               key: "delta_vortag_booster"
-          -
-            name: "Impf-quote, %"
-            keys:
-              key: "quote"
           -
             name: "Erstimpfung Impf-quote, %"
             keys:
