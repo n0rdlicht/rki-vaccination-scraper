@@ -41,6 +41,7 @@ e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently ava
 ### Changelog
 
 - Jan 4, 2021: Adds `quote` and `population` fields for comparison between different `geo`'s
+- Jan 18, 2021: Complete refactor due to overhauled excel structure and additional data
 
 ### Pagination
 Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
@@ -48,16 +49,22 @@ Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
 ### Filter / Values for `de-vaccinations` and `de-vaccinations-current`
 By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
 
+Most columns can be suffixed by `_initial` and `_booster` from `Jan 18` onward for more detailed values on the initial vaccination as well as the booster shots.
+
+Values for `key`
 - `sum`: All vaccinations
+- `sum_initial_biontech` / `sum_initial_moderna`: Number of vaccinations in intial round for respective vaccinations by BioNTech or Moderna
+- `delta_vortag`: Delta to the previous reported day
+- `quote_initial` / `quote_booster`: rate of vaccination per 100, *only on entries with where `key` is `sum`*
 - `ind_alter`: Indication by age
 - `ind_med`: Indication by medical condition
 - `ind_prof`: Indication by profession
 - `ind_pflege`: Indication by residents of nursing homes
-- `value`
+
+Other filters
 - `geo`: German state name or `Germany` for national data
 - `geotype`: either `state` for all states or `nation` for `Germany` entries
 - `population`: number of residents in `geo`
-- `quote`: rate of vaccination per 100, *only on entries with where `key` is `sum`*
 - *Note: filtering by `date` is not supported yet and only available in de-vaccinations*
 
 ### Example
@@ -180,8 +187,7 @@ pip install -Ur requirements.txt
 make
 
 # or
-make fetch # Only fetch todays data
-make update # Merge todays data with existing data
+make update # Fetch and merge todays data with existing data
 
 # Validate Data Package (requires goodtables)
 make validate
