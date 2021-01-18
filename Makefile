@@ -1,11 +1,7 @@
-all: fetch update
-
-fetch:
-	dpp run ./vaccination
+all: update
 
 update:
-	dpp run ./vaccination-archive
-	#rm data/de-vaccinations-current-dated.csv
+	dpp run ./de-vaccinations
 
 validate:
 	goodtables validate datapackage.json

@@ -1,4 +1,4 @@
-vaccination:
+de-vaccinations:
   title: Vaccination Number Scraper
   description: Published Vaccination Number Scraper
   environment:
@@ -15,26 +15,90 @@ vaccination:
         resources: ["de-population-current"]
         metadata:
           path: "data/de-population-current.csv"
+          last_update: "2019-12-31"
+          last_published: "2020-06-19"
     -
       run: load
       parameters:
         from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
-        name: 'de-vaccinations-current'
+        name: 'de-vaccinations-raw-indikation'
         format: xlsx
-        sheet: 2
+        headers: [1,2]
+        multiline_headers_joiner: " "
+        fill_merged_cells: true
         skip_rows:
           -
             type: preset
             value: blank
-          - "*"
           - "Anmerkung"
+          - "*"
           - "RS:"
+        sheet: 3
     -
       run: update_resource
       parameters:
-        resources: ["de-vaccinations-current"]
+        resources: ["de-vaccinations-raw-indikation"]
         metadata:
-          path: 'data/de-vaccinations-current.csv'
+          path: 'data/de-vaccinations-raw-indikation.csv'
+    -
+      run: load
+      parameters:
+        from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
+        name: 'de-vaccinations-raw-totals'
+        format: xlsx
+        headers: [1,3]
+        multiline_headers_joiner: " "
+        fill_merged_cells: true
+        skip_rows:
+          -
+            type: preset
+            value: blank 
+        sheet: 2    
+    -
+      run: update_resource
+      parameters:
+        resources: ["de-vaccinations-raw-totals"]
+        metadata:
+          path: 'data/de-vaccinations-raw-totals.csv'
+    -
+      run: join
+      parameters:
+        source:
+          name: de-vaccinations-raw-indikation
+          key: ["Bundesland"]
+          delete: false
+        target:
+          name: de-vaccinations-raw-totals
+          key: ["Bundesland"]
+        fields:
+          "Erstimpfung Indikation nach Alter":
+            name: "Erstimpfung Indikation nach Alter*"
+          "Erstimpfung Berufliche Indikation":
+            name: "Erstimpfung Berufliche Indikation*"
+          "Erstimpfung Medizinische Indikation":
+            name: "Erstimpfung Medizinische Indikation*"
+          "Erstimpfung Pflegeheim-bewohnerIn":
+            name: "Erstimpfung Pflegeheim-bewohnerIn*"
+          "Zweitimpfung Indikation nach Alter":
+            name: "Zweitimpfung Indikation nach Alter*"
+          "Zweitimpfung Berufliche Indikation":
+            name: "Zweitimpfung Berufliche Indikation*"
+          "Zweitimpfung Medizinische Indikation":
+            name: "Zweitimpfung Medizinische Indikation*"
+          "Zweitimpfung Pflegeheim-bewohnerIn":
+            name: "Zweitimpfung Pflegeheim-bewohnerIn*"
+        full: true
+    - 
+      flow: flows.update_resource_date
+      parameters:
+        resources: ["de-vaccinations-raw-totals","de-vaccinations-raw-indikation"]
+    # current = Erstimpfung,Zweitimpfung,geo,iso-cc,geotype,key,value,population,quote
+    -
+      run: duplicate
+      parameters:
+        source: de-vaccinations-raw-totals
+        target-name: de-vaccinations-current
+        target-path: data/de-vaccinations-current.csv
     -
       run: add_computed_field
       parameters:
@@ -48,6 +112,48 @@ vaccination:
             target: "iso-cc"
             operation: constant
             with: "DE"
+          -
+            target: "Impfungen kumulativ Gesamt"
+            operation: sum
+            source:
+              - Erstimpfung Impfungen kumulativ Gesamt
+              - Zweitimpfung Impfungen kumulativ
+          -
+            target: "Differenz zum Vortag"
+            operation: sum
+            source:
+              - Erstimpfung Differenz zum Vortag
+              - Zweitimpfung Differenz zum Vortag
+          -
+            target: "Indikation nach Alter"
+            operation: sum
+            source:
+              - Erstimpfung Indikation nach Alter
+              - Zweitimpfung Indikation nach Alter
+          -
+            target: "Berufliche Indikation"
+            operation: sum
+            source:
+              - Erstimpfung Berufliche Indikation
+              - Zweitimpfung Berufliche Indikation
+          -
+            target: "Medizinische Indikation"
+            operation: sum
+            source:
+              - Erstimpfung Medizinische Indikation
+              - Zweitimpfung Medizinische Indikation
+          -
+            target: "Pflegeheim-bewohnerIn"
+            operation: sum
+            source:
+              - Erstimpfung Pflegeheim-bewohnerIn
+              - Zweitimpfung Pflegeheim-bewohnerIn
+          -
+            target: "Impf-quote, %"
+            operation: sum
+            source:
+              - Erstimpfung Impf-quote, %
+              - Zweitimpfung Impf-quote, %
     -
       run: find_replace
       parameters:
@@ -60,7 +166,7 @@ vaccination:
                 find: (\*)
                 replace: ''
               -
-                find: (Gesamt)
+                find: Gesamt
                 replace: 'Germany'
     -
       flow: flows.insert_geotype
@@ -72,7 +178,6 @@ vaccination:
         resources: de-vaccinations-current
         fields:
           - Bundesland
-          - Impfungen pro 1.000 Einwohner
           - RS
     -
       run: unpivot
@@ -86,34 +191,107 @@ vaccination:
           name: value
           type: number
         unpivot:
+        #Erstimpfung Impfungen kumulativ Gesamt,Erstimpfung Impfungen kumulativ BioNTech,Erstimpfung Impfungen kumulativ Moderna,Erstimpfung Differenz zum Vortag,"Erstimpfung Impf-quote, %",Zweitimpfung Impfungen kumulativ,Zweitimpfung Differenz zum Vortag,Erstimpfung Berufliche Indikation,Erstimpfung Indikation nach Alter,Erstimpfung Medizinische Indikation,Erstimpfung Pflegeheim-bewohnerIn,Zweitimpfung Berufliche Indikation,Zweitimpfung Indikation nach Alter,Zweitimpfung Medizinische Indikation,Zweitimpfung Pflegeheim-bewohnerIn
           -
-            name: "Impfungen kumulativ"
+            name: "Impfungen kumulativ Gesamt"
             keys:
               key: "sum"
+          -
+            name: "Erstimpfung Impfungen kumulativ Gesamt"
+            keys:
+              key: "sum_initial"
+          -
+            name: "Zweitimpfung Impfungen kumulativ"
+            keys:
+              key: "sum_booster"
+          -
+            name: "Erstimpfung Impfungen kumulativ BioNTech"
+            keys:
+              key: "sum_initial_biontech"
+          -
+            name: "Zweitimpfung Impfungen kumulativ BioNTech"
+            keys:
+              key: "sum_booster_biontech"
+          -
+            name: "Erstimpfung Impfungen kumulativ Moderna"
+            keys:
+              key: "sum_initial_moderna"
+          -
+            name: "Zweitimpfung Impfungen kumulativ Moderna"
+            keys:
+              key: "sum_booster_moderna"
           -
             name: "Differenz zum Vortag"
             keys:
               key: "delta_vortag"
           -
-            name: "Indikation nach Alter\\*"
+            name: "Erstimpfung Differenz zum Vortag"
+            keys:
+              key: "delta_vortag_initial"
+          -
+            name: "Zweitimpfung Differenz zum Vortag"
+            keys:
+              key: "delta_vortag_booster"
+          -
+            name: "Impf-quote, %"
+            keys:
+              key: "quote"
+          -
+            name: "Erstimpfung Impf-quote, %"
+            keys:
+              key: "quote_initial"
+          -
+            name: "Zweitimpfung Impf-quote, %"
+            keys:
+              key: "quote_booster"
+          -
+            name: "Indikation nach Alter"
             keys:
               key: "ind_alter"
           -
-            name: "Berufliche Indikation\\*"
+            name: "Erstimpfung Indikation nach Alter"
+            keys:
+              key: "ind_alter_initial"
+          -
+            name: "Zweitimpfung Indikation nach Alter"
+            keys:
+              key: "ind_alter_booster"
+          -
+            name: "Berufliche Indikation"
             keys:
               key: "ind_prof"
           -
-            name: "Medizinische Indikation\\*"
+            name: "Erstimpfung Berufliche Indikation"
+            keys:
+              key: "ind_prof_initial"
+          -
+            name: "Zweitimpfung Berufliche Indikation"
+            keys:
+              key: "ind_prof_booster"
+          -
+            name: "Medizinische Indikation"
             keys:
               key: "ind_med"
           -
-            name: "Pflegeheim-bewohnerIn\\*"
+            name: "Erstimpfung Medizinische Indikation"
+            keys:
+              key: "ind_med_initial"
+          -
+            name: "Zweitimpfung Medizinische Indikation"
+            keys:
+              key: "ind_med_booster"
+          -
+            name: "Pflegeheim-bewohnerIn"
             keys:
               key: "ind_pflege"
-    - 
-      flow: flows.update_resource_date
-      parameters:
-        resources: ["de-vaccinations-current"]
+          -
+            name: "Erstimpfung Pflegeheim-bewohnerIn"
+            keys:
+              key: "ind_pflege_initial"
+          -
+            name: "Zweitimpfung Pflegeheim-bewohnerIn"
+            keys:
+              key: "ind_pflege_booster"
     -
       run: join
       parameters:
@@ -131,34 +309,6 @@ vaccination:
       flow: flows.quote
       parameters:
         resources: de-vaccinations-current
-    - 
-      flow: flows.update_resource_date
-      parameters:
-        resources: ["de-vaccinations"]
-    -
-      run: dump_to_path
-      parameters:
-        counters:
-          datapackage-rowcount: null
-          datapackage-bytes: null
-          datapackage-hash: null
-          resource-rowcount: null
-          resource-bytes: null
-          resource-hash: null
-
-vaccination-archive:
-  title: Vaccination Aggregation
-  description: Archive Published Vaccination Number Scraper
-  dependencies:
-    -
-      pipeline: ./vaccination
-  environment:
-    DEBUG: true
-  pipeline:
-    # - 
-    #   run: load
-    #   parameters:
-    #     from: datapackage.json
     -
       run: update_package
       parameters:
@@ -185,34 +335,6 @@ vaccination-archive:
             name: "ODC-PDDL-1.0"
             path: "http://opendatacommons.org/licenses/pddl/"
             title: "Open Data Commons Public Domain Dedication and License v1.0"
-    -
-      run: load
-      parameters:
-        from: "data/de-population-current.csv"
-        name: de-population-current
-    -
-      run: update_resource
-      parameters:
-        resources: ["de-population-current"]
-        metadata:
-          path: "data/de-population-current.csv"
-          last_update: "2019-12-31"
-          last_published: "2020-06-19"
-    -
-      run: load
-      parameters:
-        from: "data/de-vaccinations-current.csv"
-        name: 'de-vaccinations-current'
-    -
-      run: update_resource
-      parameters:
-        resources: ["de-vaccinations-current"]
-        metadata:
-          path: 'data/de-vaccinations-current.csv'
-    - 
-      flow: flows.update_resource_date
-      parameters:
-        resources: ["de-vaccinations-current"]
     -
       run: load
       parameters:
@@ -268,33 +390,6 @@ vaccination-archive:
       flow: flows.update_resource_date
       parameters:
         resources: ["de-vaccinations"]
-    # -
-    #   run: join
-    #   parameters:
-    #     source: 
-    #       name: de-vaccinations
-    #       key: ["date","geo","key"]
-    #       delete: True
-    #     target: 
-    #       name: de-vaccinations
-    #       key: null
-    #     fields:
-    #       date:
-    #         name: date
-    #       geo:
-    #         name: geo
-    #       iso-cc:
-    #         name: iso-cc
-    #       geotype:
-    #         name: geotype
-    #       key:
-    #         name: key
-    #       value:
-    #         name: value
-    #       population:
-    #         name: population
-    #       quote:
-    #         name: quote
     -
       run: dump_to_path
       parameters:
