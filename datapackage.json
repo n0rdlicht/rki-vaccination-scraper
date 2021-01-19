@@ -75,8 +75,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-19T11:33",
-      "last_update": "2021-01-18T11:33",
+      "last_published": "2021-01-19T13:44",
+      "last_update": "2021-01-18T13:44",
       "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
       "profile": "tabular-data-resource",
@@ -95,7 +95,7 @@
           {
             "format": "default",
             "name": "Erstimpfung Indikation nach Alter*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -105,7 +105,7 @@
           {
             "format": "default",
             "name": "Erstimpfung Medizinische Indikation*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -115,22 +115,22 @@
           {
             "format": "default",
             "name": "Zweitimpfung Indikation nach Alter*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Berufliche Indikation*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Medizinische Indikation*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Pflegeheim-bewohnerIn*",
-            "type": "any"
+            "type": "integer"
           }
         ],
         "missingValues": [
@@ -152,8 +152,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-19T11:33",
-      "last_update": "2021-01-18T11:33",
+      "last_published": "2021-01-19T13:44",
+      "last_update": "2021-01-18T13:44",
       "name": "de-vaccinations-raw-totals",
       "path": "data/de-vaccinations-raw-totals.csv",
       "profile": "tabular-data-resource",
@@ -209,7 +209,7 @@
           {
             "format": "default",
             "name": "Zweitimpfung Differenz zum Vortag",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
@@ -219,12 +219,12 @@
           {
             "format": "default",
             "name": "Erstimpfung Indikation nach Alter",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Erstimpfung Medizinische Indikation",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -234,22 +234,22 @@
           {
             "format": "default",
             "name": "Zweitimpfung Berufliche Indikation",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Indikation nach Alter",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Medizinische Indikation",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Pflegeheim-bewohnerIn",
-            "type": "any"
+            "type": "integer"
           }
         ],
         "missingValues": [
@@ -271,8 +271,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-19T11:33",
-      "last_update": "2021-01-18T11:33",
+      "last_published": "2021-01-19T13:44",
+      "last_update": "2021-01-18T13:44",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
@@ -345,8 +345,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-01-19T11:33",
-      "last_update": "2021-01-18T11:33",
+      "last_published": "2021-01-19T13:44",
+      "last_update": "2021-01-18T13:44",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
