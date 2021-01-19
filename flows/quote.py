@@ -22,7 +22,7 @@ def flow(parameters, *args):
             )
         ),
         add_computed_field(target=dict(name='quote',type='number'),
-                            operation=lambda row: (row["key"]=="sum") and round(tryconvert(row["value"],0,int)/math.floor(tryconvert(row["population"],1,int)/100),2) or None,
+                            operation=lambda row: (row["key"]=="sum") and round(tryconvert(row["value"],0,int)/math.floor(tryconvert(row["population"],100,int)/100),2) or None,
                             resources=parameters["resources"]
         )
     )

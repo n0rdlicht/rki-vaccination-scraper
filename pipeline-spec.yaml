@@ -52,7 +52,10 @@ de-vaccinations:
         skip_rows:
           -
             type: preset
-            value: blank 
+            value: blank
+          - "Anmerkung"
+          - "*"
+          - "RS:"
         sheet: 2    
     -
       run: update_resource
