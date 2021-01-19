@@ -46,6 +46,8 @@ e.g. `GET https://api.vaccination-tracker.app/v1/de-vaccinations`, currently ava
 ### Pagination
 Add `page=2` & `per_page=100` (defaults: `1` and `1000`)
 
+Make sure to adapt these to your type of request.
+
 ### Filter / Values for `de-vaccinations` and `de-vaccinations-current`
 By column: `<key>=<value>`, e.g. `?key=sum&geo=Hamburg` to only get summery values for the state of Hamburg
 
