@@ -116,12 +116,6 @@ de-vaccinations:
             operation: constant
             with: "DE"
           -
-            target: "Impfungen kumulativ Gesamt"
-            operation: sum
-            source:
-              - Erstimpfung Impfungen kumulativ Gesamt
-              - Zweitimpfung Impfungen kumulativ
-          -
             target: "Differenz zum Vortag"
             operation: sum
             source:
@@ -190,7 +184,7 @@ de-vaccinations:
         unpivot:
         #Erstimpfung Impfungen kumulativ Gesamt,Erstimpfung Impfungen kumulativ BioNTech,Erstimpfung Impfungen kumulativ Moderna,Erstimpfung Differenz zum Vortag,"Erstimpfung Impf-quote, %",Zweitimpfung Impfungen kumulativ,Zweitimpfung Differenz zum Vortag,Erstimpfung Berufliche Indikation,Erstimpfung Indikation nach Alter,Erstimpfung Medizinische Indikation,Erstimpfung Pflegeheim-bewohnerIn,Zweitimpfung Berufliche Indikation,Zweitimpfung Indikation nach Alter,Zweitimpfung Medizinische Indikation,Zweitimpfung Pflegeheim-bewohnerIn
           -
-            name: "Impfungen kumulativ Gesamt"
+            name: "Gesamtzahl bisher verabreichter Impfstoffdosen"
             keys:
               key: "sum"
           -
