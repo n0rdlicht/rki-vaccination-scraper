@@ -26,18 +26,19 @@ const options = [
   "Thüringen"
 ]
 
-// Set a state manually// 
+//Data storage
+const cacheStorage = FileManager.local();
+const cacheStoragePath = cacheStorage.cacheDirectory();
+const pathCache = cacheStorage.joinPath(cacheStoragePath, "location.txt")
+
 // const state = "Baden-Württemberg" // or "Germany", "Schleswig-Holstein", "Nordrhein-Westpfahlen", ...
 const stateData = await getState();
 const state = stateData[0];
 const locationBased = stateData[1];
 const validInput = stateData[2];
-console.log(stateData);
 
 // Vaccination API
 const vaccineStatus = encodeURI("https://api.vaccination-tracker.app/v1/de-vaccinations-current?geo=" + state);
-
-console.log(vaccineStatus)
 
 // Initialize Widget
 let widget = await createWidget();
@@ -69,7 +70,7 @@ async function createWidget(items) {
     
     const number = await getVaccineData();
   
-    let quote = number.quote.toLocaleString();
+    let quote = (Math.round(number.quote_initial*100)/100).toLocaleString();
   
     let header, label;
   
@@ -95,16 +96,16 @@ async function createWidget(items) {
     list.addSpacer(6);
     
     let deltaVortag = "k.A.";
-    if(number.delta_vortag > 10000){
-      value = Math.round(number.delta_vortag / 100) / 10;
+    if(number.delta_vortag_initial > 10000){
+      value = Math.round(number.delta_vortag_initial / 100) / 10;
       deltaVortag = "+" + value.toLocaleString() + "k";
     }
-    else if(number.delta_vortag > 1000){
-      value = Math.round(number.delta_vortag / 10) / 100;
+    else if(number.delta_vortag_initial > 1000){
+      value = Math.round(number.delta_vortag_initial / 10) / 100;
       deltaVortag = "+" + value.toLocaleString() + "k";
     }
     else {
-       deltaVortag = "+" + number.delta_vortag.toLocaleString();
+       deltaVortag = "+" + number.delta_vortag_initial.toLocaleString();
     }
    
     label = list.addText(deltaVortag + "💉");
@@ -121,7 +122,7 @@ async function createWidget(items) {
   
     list.addSpacer(8);
   
-    header = list.addText("Impfquote".toUpperCase());
+    header = list.addText("Erstimpfquote".toUpperCase());
     header.font = Font.mediumSystemFont(12);
     header.textColor = new Color("FFFFFF");
     
@@ -129,9 +130,9 @@ async function createWidget(items) {
     label.font = Font.mediumSystemFont(24);
     label.textColor = new Color("FFFFFF");
   
-    if (number.quote < 30) {
+    if (number.quote_initial < 30) {
       label.textColor = Color.red();
-    } else if (number.quote >= 30 && number.quote < 67) {
+    } else if (number.quote_initial >= 30 && number.quote_initial < 67) {
       label.textColor = Color.orange();
     } else {
       label.textColor = Color.green();
@@ -166,15 +167,11 @@ async function createWidget(items) {
 // Get vaccination rates
 async function getVaccineData() {
   let data = await new Request(vaccineStatus).loadJSON();
-  const attr = data.data[0];
   var values = {}
   values["updated"] = data.last_update
   values["published"] = data.last_published
   data.data.forEach(row => {
-    if(row["key"] == "sum") {
-      values["quote"] = row["quote"];
-    }
-    if(row["key"] == "sum" || row["key"] == "delta_vortag"){
+    if(['sum_initial','quote_initial','delta_vortag_initial'].includes(row["key"])){
       if(row["value"]) {
         values[row["key"]] = row["value"];
       }
@@ -202,15 +199,21 @@ async function getState(){
   else {
     const location = await getLocation();
     
-    const lat = location.latitude;
-    const lng = location.longitude;
+    if (location){
+      const lat = location.latitude;
+      const lng = location.longitude;
     
-    const reverse = await Location.reverseGeocode(lat, lng, "de");
-    const response = reverse[0];
+      const reverse = await Location.reverseGeocode(lat, lng, "de");
+      const response = reverse[0];
     
-    if (response.postalAddress.state && response.postalAddress.isoCountryCode === "DE") {
-      state = response.postalAddress.state;
-      locationBased = true;
+      if (response.postalAddress.state && response.postalAddress.isoCountryCode === "DE") {
+        state = response.postalAddress.state;
+        cacheStorage.writeString(pathCache, state);
+        locationBased = true;
+      }
+    }
+    else if (cacheStorage.fileExists(pathCache)) {
+      state = cacheStorage.readString(pathCache);
     }
   }
   return [state, locationBased, valid];
