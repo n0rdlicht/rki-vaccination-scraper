@@ -1,6 +1,6 @@
 RS,Bundesland,Gesamtzahl bisher verabreichter Impfstoffdosen,Erstimpfung Impfungen kumulativ Gesamt,Erstimpfung Impfungen kumulativ BioNTech,Erstimpfung Impfungen kumulativ Moderna,Erstimpfung Differenz zum Vortag,"Erstimpfung Impf-quote, %",Zweitimpfung Impfungen kumulativ,Zweitimpfung Differenz zum Vortag,Erstimpfung Berufliche Indikation,Erstimpfung Indikation nach Alter,Erstimpfung Medizinische Indikation,Erstimpfung Pflegeheim-bewohnerIn,Zweitimpfung Berufliche Indikation,Zweitimpfung Indikation nach Alter,Zweitimpfung Medizinische Indikation,Zweitimpfung Pflegeheim-bewohnerIn
 08,Baden-Württemberg,228138,189426,186964,2462,7961,1.7064799681885165,38712,5695,62226,96829,6044,37012,13195,17257,673,7039
-09,Bayern,365003,278653,269556,9097,10696,2.1231130193313588,86350,5143,143919,100537,5612,78081,54743,32478,1086,31692
+09,Bayern*,365003,278653,269556,9097,10696,2.1231130193313588,86350,5143,,,,,,,,
 11,Berlin,103639,81198,79264,1934,3138,2.21278646002947,22441,2646,22786,58189,108,32102,5685,14859,28,15872
 12,Brandenburg,68478,65723,65723,0,2277,2.6060978796483436,2755,1610,37633,25325,810,13303,2734,21,0,21
 04,Bremen,19825,17072,15814,1258,585,2.506158232066259,2753,631,7319,3336,129,6253,957,333,11,1086
