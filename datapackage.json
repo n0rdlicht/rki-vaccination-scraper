@@ -75,8 +75,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-03T09:47",
-      "last_update": "2021-02-02T09:47",
+      "last_published": "2021-02-04T10:01",
+      "last_update": "2021-02-03T10:01",
       "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
       "profile": "tabular-data-resource",
@@ -152,8 +152,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-03T09:47",
-      "last_update": "2021-02-02T09:47",
+      "last_published": "2021-02-04T10:01",
+      "last_update": "2021-02-03T10:01",
       "name": "de-vaccinations-raw-totals",
       "path": "data/de-vaccinations-raw-totals.csv",
       "profile": "tabular-data-resource",
@@ -203,13 +203,30 @@
           },
           {
             "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ",
+            "name": "Zweitimpfung Impfungen kumulativ Gesamt",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "Zweitimpfung Impfungen kumulativ BioNTech",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "Zweitimpfung Impfungen kumulativ Moderna",
             "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Differenz zum Vortag",
             "type": "integer"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "Zweitimpfung Impf-quote, %",
+            "type": "number"
           },
           {
             "format": "default",
@@ -271,13 +288,18 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-03T09:47",
-      "last_update": "2021-02-02T09:47",
+      "last_published": "2021-02-04T10:01",
+      "last_update": "2021-02-03T10:01",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
       "schema": {
         "fields": [
+          {
+            "format": "default",
+            "name": "Zweitimpfung Impfungen kumulativ Gesamt",
+            "type": "integer"
+          },
           {
             "format": "default",
             "name": "geo",
@@ -340,8 +362,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-03T09:47",
-      "last_update": "2021-02-02T09:47",
+      "last_published": "2021-02-04T10:01",
+      "last_update": "2021-02-03T10:01",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
