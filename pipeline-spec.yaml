@@ -192,7 +192,7 @@ de-vaccinations:
             keys:
               key: "sum_initial"
           -
-            name: "Zweitimpfung Impfungen kumulativ"
+            name: "Zweitimpfung Impfungen kumulativ Gesamt"
             keys:
               key: "sum_booster"
           -
@@ -211,6 +211,14 @@ de-vaccinations:
             name: "Zweitimpfung Impfungen kumulativ Moderna"
             keys:
               key: "sum_booster_moderna"
+          -
+            name: "Erstimpfung Impfungen kumulativ AstraZeneca"
+            keys:
+              key: "sum_initial_astrazeneca"
+          -
+            name: "Zweitimpfung Impfungen kumulativ AstraZeneca"
+            keys:
+              key: "sum_booster_astrazeneca"
           -
             name: "Differenz zum Vortag"
             keys:

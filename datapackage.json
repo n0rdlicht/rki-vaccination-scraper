@@ -302,16 +302,6 @@
         "fields": [
           {
             "format": "default",
-            "name": "Erstimpfung Impfungen kumulativ AstraZeneca",
-            "type": "integer"
-          },
-          {
-            "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ Gesamt",
-            "type": "integer"
-          },
-          {
-            "format": "default",
             "name": "geo",
             "type": "string"
           },
