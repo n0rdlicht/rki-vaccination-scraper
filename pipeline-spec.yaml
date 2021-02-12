@@ -26,6 +26,7 @@ de-vaccinations:
         headers: [1,2]
         multiline_headers_joiner: " "
         fill_merged_cells: true
+        limit_rows: 17
         skip_rows:
           -
             type: preset
@@ -49,6 +50,7 @@ de-vaccinations:
         headers: [1,3]
         multiline_headers_joiner: " "
         fill_merged_cells: true
+        limit_rows: 17
         skip_rows:
           -
             type: preset
@@ -63,6 +65,17 @@ de-vaccinations:
         resources: ["de-vaccinations-raw-totals"]
         metadata:
           path: 'data/de-vaccinations-raw-totals.csv'
+    -
+      run: find_replace
+      parameters:
+        resources: de-vaccinations-raw-totals
+        fields:
+          -
+            name: Bundesland
+            patterns:
+              -
+                find: (\s*\**)
+                replace: ''
     -
       run: join
       parameters:
