@@ -75,8 +75,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-18T07:51",
-      "last_update": "2021-02-17T07:51",
+      "last_published": "2021-02-19T08:26",
+      "last_update": "2021-02-18T08:26",
       "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
       "profile": "tabular-data-resource",
@@ -93,14 +93,18 @@
             "type": "string"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Erstimpfung Indikation nach Alter*",
-            "type": "integer"
+            "type": "number"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Erstimpfung Berufliche Indikation*",
-            "type": "integer"
+            "type": "number"
           },
           {
             "format": "default",
@@ -118,9 +122,11 @@
             "type": "integer"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Zweitimpfung Berufliche Indikation*",
-            "type": "integer"
+            "type": "number"
           },
           {
             "format": "default",
@@ -152,8 +158,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-18T07:51",
-      "last_update": "2021-02-17T07:51",
+      "last_published": "2021-02-19T08:26",
+      "last_update": "2021-02-18T08:26",
       "name": "de-vaccinations-raw-totals",
       "path": "data/de-vaccinations-raw-totals.csv",
       "profile": "tabular-data-resource",
@@ -234,14 +240,18 @@
             "type": "number"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Erstimpfung Berufliche Indikation",
-            "type": "integer"
+            "type": "number"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Erstimpfung Indikation nach Alter",
-            "type": "integer"
+            "type": "number"
           },
           {
             "format": "default",
@@ -254,9 +264,11 @@
             "type": "integer"
           },
           {
+            "decimalChar": ".",
             "format": "default",
+            "groupChar": "",
             "name": "Zweitimpfung Berufliche Indikation",
-            "type": "integer"
+            "type": "number"
           },
           {
             "format": "default",
@@ -293,8 +305,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-18T07:51",
-      "last_update": "2021-02-17T07:51",
+      "last_published": "2021-02-19T08:26",
+      "last_update": "2021-02-18T08:26",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
@@ -362,8 +374,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-02-18T07:51",
-      "last_update": "2021-02-17T07:51",
+      "last_published": "2021-02-19T08:26",
+      "last_update": "2021-02-18T08:26",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
