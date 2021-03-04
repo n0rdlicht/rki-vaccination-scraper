@@ -75,8 +75,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-03T09:24",
-      "last_update": "2021-03-02T09:24",
+      "last_published": "2021-03-04T08:23",
+      "last_update": "2021-03-03T08:23",
       "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
       "profile": "tabular-data-resource",
@@ -152,8 +152,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-03T09:24",
-      "last_update": "2021-03-02T09:24",
+      "last_published": "2021-03-04T08:23",
+      "last_update": "2021-03-03T08:23",
       "name": "de-vaccinations-raw-totals",
       "path": "data/de-vaccinations-raw-totals.csv",
       "profile": "tabular-data-resource",
@@ -172,66 +172,62 @@
           {
             "format": "default",
             "name": "Gesamtzahl bisher verabreichter Impfstoffdosen",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ Gesamt",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ BioNTech",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ Moderna",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ AstraZeneca",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Erstimpfung Differenz zum Vortag",
-            "type": "integer"
+            "type": "any"
           },
           {
-            "decimalChar": ".",
             "format": "default",
-            "groupChar": "",
             "name": "Erstimpfung Impf-quote, %",
-            "type": "number"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ Gesamt",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ BioNTech",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ Moderna",
-            "type": "integer"
+            "type": "any"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Differenz zum Vortag",
-            "type": "integer"
+            "type": "any"
           },
           {
-            "decimalChar": ".",
             "format": "default",
-            "groupChar": "",
             "name": "Zweitimpfung Impf-quote, %",
-            "type": "number"
+            "type": "any"
           },
           {
             "format": "default",
@@ -293,8 +289,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-03T09:24",
-      "last_update": "2021-03-02T09:24",
+      "last_published": "2021-03-04T08:23",
+      "last_update": "2021-03-03T08:23",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
@@ -362,8 +358,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-03T09:24",
-      "last_update": "2021-03-02T09:24",
+      "last_published": "2021-03-04T08:23",
+      "last_update": "2021-03-03T08:23",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
