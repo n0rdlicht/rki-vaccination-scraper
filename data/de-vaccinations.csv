@@ -17688,7 +17688,7 @@ Thüringen,DE,state,ind_med_booster,2912,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege,34888,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege_initial,22616,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege_booster,12272,2133378,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum,4377,,,2021-03-03
+"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum,4377,,4377.0,2021-03-03
 "Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial,3379,,,2021-03-03
 "Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_booster,998,,,2021-03-03
 "Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial_biontech,2654,,,2021-03-03
