@@ -42,6 +42,12 @@ de-vaccinations:
         metadata:
           path: 'data/de-vaccinations-raw-indikation.csv'
     -
+      run: filter
+      parameters:
+        resources: ["de-vaccinations-raw-indikation"]
+        out:
+          - Bundesland: "Bund **"
+    -
       run: load
       parameters:
         from: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile"
@@ -66,6 +72,12 @@ de-vaccinations:
         metadata:
           path: 'data/de-vaccinations-raw-totals.csv'
     -
+      run: filter
+      parameters:
+        resources: ["de-vaccinations-raw-totals"]
+        out:
+          - Bundesland: "Bund *"
+    -
       run: find_replace
       parameters:
         resources: de-vaccinations-raw-totals
@@ -88,6 +100,17 @@ de-vaccinations:
               -
                 find: (\-)
                 replace: ''
+    # For debugging
+    # -
+    #   run: dump_to_path
+    #   parameters:
+    #     counters:
+    #       datapackage-rowcount: null
+    #       datapackage-bytes: null
+    #       datapackage-hash: null
+    #       resource-rowcount: null
+    #       resource-bytes: null
+    #       resource-hash: null
     -
       run: join
       parameters:
