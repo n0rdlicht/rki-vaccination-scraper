@@ -17688,31 +17688,31 @@ Thüringen,DE,state,ind_med_booster,2912,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege,34888,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege_initial,22616,2133378,,2021-03-03
 Thüringen,DE,state,ind_pflege_booster,12272,2133378,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum,4377,,4377.0,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial,3379,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_booster,998,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial_biontech,2654,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_booster_biontech,997,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial_moderna,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_booster_moderna,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,sum_initial_astrazeneca,725,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,delta_vortag,591,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,delta_vortag_initial,590,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,delta_vortag_booster,1,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,quote_initial,,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,quote_booster,,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_alter,1898,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_alter_initial,1898,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_alter_booster,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_prof,2481,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_prof_initial,1483,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_prof_booster,998,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_med,3,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_med_initial,3,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_med_booster,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_pflege,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_pflege_initial,0,,,2021-03-03
-"Bund (Einsatzkräfte Bundeswehr, Bundespolizei)",DE,state,ind_pflege_booster,0,,,2021-03-03
+"Bund",DE,state,sum,4377,,4377.0,2021-03-03
+"Bund",DE,state,sum_initial,3379,,,2021-03-03
+"Bund",DE,state,sum_booster,998,,,2021-03-03
+"Bund",DE,state,sum_initial_biontech,2654,,,2021-03-03
+"Bund",DE,state,sum_booster_biontech,997,,,2021-03-03
+"Bund",DE,state,sum_initial_moderna,0,,,2021-03-03
+"Bund",DE,state,sum_booster_moderna,0,,,2021-03-03
+"Bund",DE,state,sum_initial_astrazeneca,725,,,2021-03-03
+"Bund",DE,state,delta_vortag,591,,,2021-03-03
+"Bund",DE,state,delta_vortag_initial,590,,,2021-03-03
+"Bund",DE,state,delta_vortag_booster,1,,,2021-03-03
+"Bund",DE,state,quote_initial,,,,2021-03-03
+"Bund",DE,state,quote_booster,,,,2021-03-03
+"Bund",DE,state,ind_alter,1898,,,2021-03-03
+"Bund",DE,state,ind_alter_initial,1898,,,2021-03-03
+"Bund",DE,state,ind_alter_booster,0,,,2021-03-03
+"Bund",DE,state,ind_prof,2481,,,2021-03-03
+"Bund",DE,state,ind_prof_initial,1483,,,2021-03-03
+"Bund",DE,state,ind_prof_booster,998,,,2021-03-03
+"Bund",DE,state,ind_med,3,,,2021-03-03
+"Bund",DE,state,ind_med_initial,3,,,2021-03-03
+"Bund",DE,state,ind_med_booster,0,,,2021-03-03
+"Bund",DE,state,ind_pflege,0,,,2021-03-03
+"Bund",DE,state,ind_pflege_initial,0,,,2021-03-03
+"Bund",DE,state,ind_pflege_booster,0,,,2021-03-03
 Germany,DE,nation,sum,6813173,83166711,8.19,2021-03-03
 Germany,DE,nation,sum_initial,4541389,83166711,,2021-03-03
 Germany,DE,nation,sum_booster,2271784,83166711,,2021-03-03
