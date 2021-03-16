@@ -75,8 +75,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-15T13:13",
-      "last_update": "2021-03-14T13:13",
+      "last_published": "2021-03-16T08:05",
+      "last_update": "2021-03-15T08:05",
       "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
       "profile": "tabular-data-resource",
@@ -100,7 +100,7 @@
           {
             "format": "default",
             "name": "Erstimpfung Berufliche Indikation*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -120,7 +120,7 @@
           {
             "format": "default",
             "name": "Zweitimpfung Berufliche Indikation*",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -152,8 +152,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-15T13:13",
-      "last_update": "2021-03-14T13:13",
+      "last_published": "2021-03-16T08:05",
+      "last_update": "2021-03-15T08:05",
       "name": "de-vaccinations-raw-totals",
       "path": "data/de-vaccinations-raw-totals.csv",
       "profile": "tabular-data-resource",
@@ -172,12 +172,12 @@
           {
             "format": "default",
             "name": "Gesamtzahl bisher verabreichter Impfstoffdosen",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ Gesamt",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -187,12 +187,12 @@
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ Moderna",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Erstimpfung Impfungen kumulativ AstraZeneca",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -207,7 +207,7 @@
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ Gesamt",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -217,12 +217,12 @@
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ Moderna",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
             "name": "Zweitimpfung Impfungen kumulativ AstraZeneca",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -237,7 +237,7 @@
           {
             "format": "default",
             "name": "Erstimpfung Berufliche Indikation",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -257,7 +257,7 @@
           {
             "format": "default",
             "name": "Zweitimpfung Berufliche Indikation",
-            "type": "any"
+            "type": "integer"
           },
           {
             "format": "default",
@@ -294,8 +294,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-15T13:13",
-      "last_update": "2021-03-14T13:13",
+      "last_published": "2021-03-16T08:05",
+      "last_update": "2021-03-15T08:05",
       "name": "de-vaccinations-current",
       "path": "data/de-vaccinations-current.csv",
       "profile": "tabular-data-resource",
@@ -363,8 +363,8 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "last_published": "2021-03-15T13:13",
-      "last_update": "2021-03-14T13:13",
+      "last_published": "2021-03-16T08:05",
+      "last_update": "2021-03-15T08:05",
       "mediatype": "text/csv",
       "name": "de-vaccinations",
       "path": "data/de-vaccinations.csv",
