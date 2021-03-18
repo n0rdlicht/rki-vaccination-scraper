@@ -1,6 +1,7 @@
-from pandas_datapackage_reader import read_datapackage
-from datetime import datetime
+from frictionless import Package, Layout, transform, steps
+from datetime import datetime, date
 import json
+from decimal import Decimal
 
 from flask import Flask, Response, request
 from flask_cors import CORS, cross_origin
@@ -8,11 +9,8 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 cors = CORS(app)
 
-data = read_datapackage("")
-resources = list(data.keys())
-
-def get_paginated_json(df, per_page, page):
-    return df[page:page+per_page].to_json(orient='records',date_format='iso')
+data = Package("datapackage.json")
+resources = data.resource_names
 
 @app.route('/v1/<string:dataset>')
 @app.route('/v1', defaults={'dataset': ''})
@@ -47,24 +45,36 @@ def api(dataset):
         mimetype='application/json',
         status=404)
     else:
-        df = data.copy()[dataset]
-        last_update = df._metadata['last_update']
-        last_published = df._metadata['last_published']
-        df_reset = df.copy().reset_index()
+        df = data.get_resource(dataset)
+        print(df)
+        last_update = df['last_update']
+        last_published = df['last_published']
         dpf = []
-        for fld in df._metadata['schema']['fields']:
+        filter_strings = []
+        for fld in df.schema.fields:
             fn = fld['name']
             try:
                 q = request.args.get(fn)
             except:
                 q = None
+            
             if q is not None:
-                try:
-                    q = q.strip()
-                    df_reset = df_reset.loc[df_reset[fn] == q]
-                    dpf.append({fn:q})
-                except:
-                    pass
+                q = q.strip()
+                filter_strings.append("%s == '%s'" % (fn, q))
+                dpf.append({fn:q})
+        
+        transform_steps=[]
+        if len(filter_strings) > 0:
+            filter_expression = " and ".join(filter_strings)
+            transform_steps.append(steps.row_filter(formula=filter_expression))
+        
+        transform_steps.append(steps.row_slice(start=page,stop=(page+per_page)))
+
+        df = transform(df,
+            steps=transform_steps)
+        
+        rows = df.read_rows()
+        print(rows)
 
         return Response(
             json.dumps({
@@ -75,7 +85,15 @@ def api(dataset):
                 "applied_filter": dpf, 
                 "per_page": per_page, 
                 "page": page,
-                "data": json.loads(get_paginated_json(df_reset,per_page,page))
-                }),
+                "data": rows
+                }, cls = DecimalEncoder),
             mimetype='application/json',
             status=200)
+
+class DecimalEncoder (json.JSONEncoder):
+    def default (self, obj):
+        if isinstance (obj, Decimal): 
+            return float (obj)
+        if isinstance (obj, date): 
+            return obj.strftime('%Y-%m-%d')
+        return json.JSONEncoder.default (self, obj)
