@@ -22,7 +22,7 @@ def api(dataset):
         per_page = 1000
 
     try:
-        page = (int(request.args.get('page', 1))-1)*per_page + 1
+        page = (int(request.args.get('page', 1))-1)*per_page
     except:
         page = 1
 
@@ -68,7 +68,7 @@ def api(dataset):
             filter_expression = " and ".join(filter_strings)
             transform_steps.append(steps.row_filter(formula=filter_expression))
         
-        transform_steps.append(steps.row_slice(start=page,stop=(page+per_page),step=1))
+        transform_steps.append(steps.row_slice(start=page,stop=(page+per_page)))
 
         df = transform(df,
             steps=transform_steps)
