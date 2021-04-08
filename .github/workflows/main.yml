@@ -2,8 +2,8 @@ name: Update Data Package
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  schedule:
-   - cron: '17,34,57 7-18 * * *'
+  # schedule:
+  #  - cron: '17,34,57 7-18 * * *'
 
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
         with:
-          path: "requirements.txt"  
+          path: "requirements.txt"
       - run: make all
       - run: make validate
       - name: push
