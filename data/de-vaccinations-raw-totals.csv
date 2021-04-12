@@ -1,19 +1,19 @@
-RS,Bundesland,"Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Gesamt","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_BioNTech","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Moderna","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_AstraZeneca","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Differenz zum Vortag","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Gesamt","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_BioNTech","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Moderna","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_AstraZeneca","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Differenz zum Vortag",Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_Gesamt,Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_BioNTech,Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_Moderna,Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_AstraZeneca,Impfungen bei niedergelassenen Ärzten_eine Impfung_Differenz zum Vortag,Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_Gesamt,Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_BioNTech,Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_Moderna,Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_AstraZeneca,Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Differenz zum Vortag
-8,Baden-Württemberg,1512528,942989,76423,493116,32611,635649,600906,34597,146,12426,124366,121736,6,2624,31947,4026,4024,0,2,448
-9,Bayern,1837002,1240053,99713,497236,58759,846579,804240,42224,115,12507,174887,141491,73,33323,32106,264,246,0,18,78
-11,Berlin,531543,322071,48669,160803,10351,256779,241102,15677,0,4627,41430,29445,7,11978,10281,70,53,0,17,21
-12,Brandenburg,357164,222205,34034,100925,7129,128393,122101,6288,4,5434,47806,40665,0,7141,8482,2702,2698,0,4,444
-4,Bremen,117393,78290,7366,31737,3893,41334,38297,3033,4,642,6830,6830,0,0,2116,7,7,0,0,3
-2,Hamburg,259986,178796,12692,68498,6461,104145,98407,5685,53,753,16560,13008,18,3534,4399,23,21,0,2,16
-6,Hessen,803272,523253,34871,245148,0,392897,377563,15231,103,0,63455,60491,16,2948,16803,114,114,0,0,26
-13,Mecklenburg-Vorpommern,202367,143920,16223,42224,5280,89992,83772,6129,91,2016,23625,20907,6,2712,6200,62,58,0,4,19
-3,Niedersachsen,1089763,691776,77369,320618,27127,465747,446619,18680,448,8929,86209,85858,56,295,23970,175,164,11,0,59
-5,Nordrhein-Westfalen,2539695,1555397,114966,869332,46629,1006609,973443,31953,1213,14677,214415,193592,522,20301,60124,595,516,73,6,152
-7,Rheinland-Pfalz,602152,402525,35603,164024,14507,205728,201052,4561,115,2455,41466,41466,0,0,10776,75,75,0,0,19
-10,Saarland,161469,109596,12615,39258,4158,58733,55618,3105,10,1029,11569,11432,54,83,3223,16,16,0,0,7
-14,Sachsen,543029,382761,32966,127302,14153,281231,264570,16661,0,876,52526,36382,0,16144,9478,101,84,0,17,17
-15,Sachsen-Anhalt,317295,194845,26698,95752,0,111013,103700,7306,7,0,28313,25919,0,2394,5669,83,83,0,0,8
-1,Schleswig-Holstein,454882,300409,29063,125410,0,135512,130330,5025,157,0,34418,34203,1,214,8118,88,88,0,0,13
-16,Thüringen,325780,221030,20012,84738,6765,141500,132630,8857,13,3096,21063,21000,36,27,4475,15,15,0,0,6
-,Impfzentren Bund*,26030,2,11642,14386,933,51,1,38,12,0,,,,,,,,,,
-,Gesamt,11681350,7509918,690925,3480507,238756,4901892,4674351,225050,2491,69467,988938,884425,795,103718,238167,8416,8262,84,70,1336
+RS,Bundesland,"Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Gesamt","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_BioNTech","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Moderna","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_AstraZeneca","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Differenz zum Vortag","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Gesamt","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_BioNTech","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Moderna","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_AstraZeneca","Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Differenz zum Vortag",Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Gesamt,Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_BioNTech,Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Moderna,Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_AstraZeneca,Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Differenz zum Vortag,Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Gesamt,Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_BioNTech,Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Moderna,Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_AstraZeneca,Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Differenz zum Vortag
+8,Baden-Württemberg,1571723,974876,80959,515888,26654,657235,621997,35086,152,11103,129527,126770,6,2751,1148,4045,4043,0,2,0
+9,Bayern,1917361,1306153,106239,504969,41017,853848,808440,45290,118,3840,178473,144647,98,33728,441,284,266,0,18,1
+11,Berlin,551607,336123,49753,165731,9939,265456,247823,17633,0,4255,43397,31217,7,12173,180,75,58,0,17,0
+12,Brandenburg,359843,224350,34568,100925,543,133196,126110,7082,4,1,48473,41158,0,7315,25,2726,2722,0,4,0
+4,Bremen,123531,82062,7611,33858,2525,42160,39118,3038,4,371,6956,6956,0,0,0,7,7,0,0,0
+2,Hamburg,272586,190514,13574,68498,6421,105748,99166,6529,53,724,17012,13460,18,3534,28,25,23,0,2,2
+6,Hessen,854064,547304,40023,266737,14489,411000,394057,16830,113,4893,66770,63451,16,3303,298,120,120,0,0,0
+13,Mecklenburg-Vorpommern,207426,145347,16743,45336,629,90024,83802,6130,92,1,23946,21085,6,2855,98,64,60,0,4,2
+3,Niedersachsen,1120835,712430,79866,328539,5398,468441,449212,18783,446,10,88501,88150,56,295,263,181,170,11,0,0
+5,Nordrhein-Westfalen,2663674,1621866,115003,926805,55120,1038760,1005518,31953,1289,14710,228445,200059,594,27792,1829,651,568,77,6,8
+7,Rheinland-Pfalz,614875,404069,36195,174611,3815,206188,201508,4563,117,1,43088,43088,0,0,115,78,78,0,0,1
+10,Saarland,167087,113468,14300,39319,629,59756,56477,3269,10,0,12100,11893,54,153,11,17,17,0,0,0
+14,Sachsen,573254,393527,35453,144274,14483,283560,265961,17599,0,1120,54390,37789,0,16601,438,104,86,0,18,0
+15,Sachsen-Anhalt,335695,203537,27721,104437,1587,114508,107053,7445,10,4,28793,26372,0,2421,63,85,85,0,0,2
+1,Schleswig-Holstein,477568,314760,31884,130924,6367,144203,138328,5704,171,2840,35521,35306,1,214,114,92,92,0,0,0
+16,Thüringen,332471,227722,20012,84737,3352,152491,143621,8857,13,5508,21517,21454,36,27,12,16,16,0,0,0
+,Impfzentren Bund*,26043,2,11655,14386,0,51,1,38,12,0,,,,,,,,,,
+,Gesamt,12169643,7798110,721559,3649974,192968,5026625,4788192,235829,2604,49381,1026909,912855,892,113162,5063,8570,8411,88,71,16

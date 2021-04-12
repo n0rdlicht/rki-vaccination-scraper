@@ -22,412 +22,652 @@
     }
   ],
   "name": "covid19-vaccinations-germany",
-  "profile": "data-package",
   "resources": [
     {
-      "dialect": {
-        "caseSensitiveHeader": false,
-        "delimiter": ",",
-        "doubleQuote": true,
-        "header": true,
-        "lineTerminator": "\r\n",
-        "quoteChar": "\"",
-        "skipInitialSpace": false
-      },
-      "dpp:streamedFrom": "data/de-population-current.csv",
-      "dpp:streaming": true,
-      "encoding": "utf-8",
-      "format": "csv",
-      "last_published": "2020-06-19",
-      "last_update": "2019-12-31",
-      "name": "de-population-current",
       "path": "data/de-population-current.csv",
+      "hashing": "sha256",
+      "name": "de-population-current",
       "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "stats": {
+        "hash": "3e97b0c08595308324c98a54fc7b7b461efe8cabd6f24eff755058120ad31bcb",
+        "bytes": 381,
+        "fields": 2,
+        "rows": 17
+      },
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
-            "format": "default",
             "name": "geo",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
-            "format": "default",
             "name": "population",
-            "type": "integer"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           }
         ],
         "missingValues": [
           ""
         ]
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "doubleQuote": true,
+        "skipInitialSpace": false
+      },
+      "layout": {
+        "header": true,
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
       }
     },
     {
-      "dialect": {
-        "caseSensitiveHeader": false,
-        "delimiter": ",",
-        "doubleQuote": true,
-        "header": true,
-        "lineTerminator": "\r\n",
-        "quoteChar": "\"",
-        "skipInitialSpace": false
-      },
-      "dpp:streamedFrom": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile",
-      "dpp:streaming": true,
-      "encoding": "utf-8",
-      "format": "csv",
-      "last_published": "2021-04-07T06:54",
-      "last_update": "2021-04-06T06:54",
-      "name": "de-vaccinations-raw-indikation",
       "path": "data/de-vaccinations-raw-indikation.csv",
+      "hashing": "sha256",
+      "name": "de-vaccinations-raw-indikation",
       "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "stats": {
+        "hash": "dc8d65ec2a37d3672de493dfa0021800797ea0df80ccd38e492dd2328b2d8339",
+        "bytes": 1435,
+        "fields": 10,
+        "rows": 17
+      },
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
-            "format": "default",
             "name": "RS",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Bundesland",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
-            "format": "default",
             "name": "Erstimpfung Indikation nach Alter*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Erstimpfung Berufliche Indikation*",
-            "type": "integer"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Erstimpfung Medizinische Indikation*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Erstimpfung Pflegeheim-bewohnerIn*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Zweitimpfung Indikation nach Alter*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Zweitimpfung Berufliche Indikation*",
-            "type": "integer"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Zweitimpfung Medizinische Indikation*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
-            "format": "default",
             "name": "Zweitimpfung Pflegeheim-bewohnerIn*",
-            "type": "any"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           }
         ],
         "missingValues": [
           ""
         ]
-      }
-    },
-    {
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
       "dialect": {
-        "caseSensitiveHeader": false,
         "delimiter": ",",
-        "doubleQuote": true,
-        "header": true,
         "lineTerminator": "\r\n",
         "quoteChar": "\"",
+        "doubleQuote": true,
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile",
-      "dpp:streaming": true,
-      "encoding": "utf-8",
-      "format": "csv",
-      "last_published": "2021-04-07T06:54",
-      "last_update": "2021-04-06T06:54",
-      "name": "de-vaccinations-raw-totals",
-      "path": "data/de-vaccinations-raw-totals.csv",
+      "layout": {
+        "header": true,
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
+      },
+      "last_published": "2021-04-11",
+      "last_update": "2021-04-12"
+    },
+    {
+      "path": "data/de-vaccinations-raw-quote.csv",
+      "hashing": "sha256",
+      "name": "de-vaccinations-raw-quote",
       "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "stats": {
+        "hash": "88ac027869f34855ba0f0e9c57626a9c2d419edb28cc5d01eee754ee165c995d",
+        "bytes": 3879,
+        "fields": 19,
+        "rows": 18
+      },
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
-            "format": "default",
             "name": "RS",
-            "type": "any"
+            "type": "any",
+            "format": "default"
           },
           {
-            "format": "default",
             "name": "Bundesland",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Gesamtzahl bisher verabreichter Impfungen",
+            "type": "integer",
             "format": "default",
-            "name": "Gesamtzahl bisher verabreichter Impfstoffdosen",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Gesamtzahl einmalig geimpft",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Impfungen kumulativ Gesamt",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Gesamtzahl vollständig geimpft",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Impfungen kumulativ BioNTech",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_Gesamt",
+            "type": "number",
             "format": "default",
-            "name": "Erstimpfung Impfungen kumulativ Moderna",
-            "type": "integer"
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
-            "format": "default",
-            "name": "Erstimpfung Impfungen kumulativ AstraZeneca",
-            "type": "integer"
+            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_<60 Jahre",
+            "type": "any",
+            "format": "default"
           },
           {
-            "format": "default",
-            "name": "Erstimpfung Differenz zum Vortag",
-            "type": "any"
+            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_60+ Jahre",
+            "type": "any",
+            "format": "default"
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_Gesamt",
+            "type": "number",
             "format": "default",
-            "name": "Erstimpfung Impf-quote, %",
-            "type": "any"
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
-            "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ Gesamt",
-            "type": "integer"
+            "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_<60 Jahre",
+            "type": "any",
+            "format": "default"
           },
           {
-            "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ BioNTech",
-            "type": "integer"
+            "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_60+ Jahre",
+            "type": "any",
+            "format": "default"
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_eine Impfung_<60 Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ Moderna",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_eine Impfung_60+ Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Zweitimpfung Impfungen kumulativ AstraZeneca",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_vollständig geimpft_<60 Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Zweitimpfung Differenz zum Vortag",
-            "type": "any"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_vollständig geimpft_60+Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Zweitimpfung Impf-quote, %",
-            "type": "any"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_<60 Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Berufliche Indikation",
-            "type": "integer"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_60+ Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Indikation nach Alter",
-            "type": "any"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_<60 Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Medizinische Indikation",
-            "type": "any"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_60+Jahre",
+            "type": "integer",
             "format": "default",
-            "name": "Erstimpfung Pflegeheim-bewohnerIn",
-            "type": "any"
-          },
-          {
-            "format": "default",
-            "name": "Zweitimpfung Berufliche Indikation",
-            "type": "integer"
-          },
-          {
-            "format": "default",
-            "name": "Zweitimpfung Indikation nach Alter",
-            "type": "any"
-          },
-          {
-            "format": "default",
-            "name": "Zweitimpfung Medizinische Indikation",
-            "type": "any"
-          },
-          {
-            "format": "default",
-            "name": "Zweitimpfung Pflegeheim-bewohnerIn",
-            "type": "any"
+            "bareNumber": true
           }
         ],
         "missingValues": [
           ""
         ]
-      }
-    },
-    {
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
       "dialect": {
-        "caseSensitiveHeader": false,
         "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
         "doubleQuote": true,
+        "skipInitialSpace": false
+      },
+      "layout": {
         "header": true,
-        "lineTerminator": "\r\n",
-        "quoteChar": "\"",
-        "skipInitialSpace": false
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
       },
-      "dpp:streamedFrom": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile",
-      "dpp:streaming": true,
-      "encoding": "utf-8",
-      "format": "csv",
-      "last_published": "2021-04-07T06:54",
-      "last_update": "2021-04-06T06:54",
-      "name": "de-vaccinations-current",
-      "path": "data/de-vaccinations-current.csv",
+      "last_published": "2021-04-11",
+      "last_update": "2021-04-12"
+    },
+    {
+      "path": "data/de-vaccinations-raw-totals.csv",
+      "hashing": "sha256",
+      "name": "de-vaccinations-raw-totals",
       "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "stats": {
+        "hash": "97e329004bcecdb75ff81fa15bf4841b95fa3ed33433536a743f3b2cfa4887e1",
+        "bytes": 3902,
+        "fields": 22,
+        "rows": 18
+      },
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
-            "format": "default",
-            "name": "geo",
-            "type": "string"
+            "name": "RS",
+            "type": "any",
+            "format": "default"
           },
           {
-            "format": "default",
-            "name": "iso-cc",
-            "type": "any"
+            "name": "Bundesland",
+            "type": "string",
+            "format": "default"
           },
           {
-            "constraints": {
-              "enum": [
-                "state",
-                "nation"
-              ]
-            },
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Gesamt",
+            "type": "integer",
             "format": "default",
-            "name": "geotype",
-            "type": "string"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_BioNTech",
+            "type": "integer",
             "format": "default",
-            "name": "key",
-            "type": "string"
+            "bareNumber": true
           },
           {
-            "decimalChar": ".",
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_Moderna",
+            "type": "integer",
             "format": "default",
-            "groupChar": "",
-            "name": "value",
-            "type": "number"
+            "bareNumber": true
           },
           {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Impfungen kumulativ_AstraZeneca",
+            "type": "integer",
             "format": "default",
-            "name": "population",
-            "type": "integer"
+            "bareNumber": true
           },
           {
-            "decimalChar": ".",
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_eine Impfung_Differenz zum Vortag",
+            "type": "integer",
             "format": "default",
-            "groupChar": "",
-            "name": "quote",
-            "type": "number"
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Gesamt",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_BioNTech",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_Moderna",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Impfungen kumulativ_AstraZeneca",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen in Impfzentren, Mobilen Teams, Krankenhäusern_vollständig geimpft_Differenz zum Vortag",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Gesamt",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_BioNTech",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Moderna",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_AstraZeneca",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Differenz zum Vortag",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Gesamt",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_BioNTech",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Moderna",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_AstraZeneca",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Differenz zum Vortag",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           }
         ],
         "missingValues": [
           ""
         ]
-      }
-    },
-    {
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
       "dialect": {
         "delimiter": ",",
-        "doubleQuote": true,
         "lineTerminator": "\r\n",
         "quoteChar": "\"",
+        "doubleQuote": true,
         "skipInitialSpace": false
       },
-      "dpp:streaming": true,
-      "encoding": "utf-8",
+      "layout": {
+        "header": true,
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
+      },
+      "last_published": "2021-04-11",
+      "last_update": "2021-04-12"
+    },
+    {
+      "path": "data/de-vaccinations-current.csv",
+      "hashing": "sha256",
+      "name": "de-vaccinations-current",
+      "profile": "tabular-data-resource",
+      "scheme": "file",
       "format": "csv",
-      "last_published": "2021-04-07T06:54",
-      "last_update": "2021-04-06T06:54",
-      "mediatype": "text/csv",
-      "name": "de-vaccinations",
-      "path": "data/de-vaccinations.csv",
-      "profile": "data-resource",
+      "stats": {
+        "hash": "1f4a2ced4fc2dcb9940a3952234ae435fd508ab6036bef92614962942b1496e0",
+        "bytes": 67739,
+        "fields": 7,
+        "rows": 867
+      },
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
-            "format": "default",
             "name": "geo",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
-            "format": "default",
             "name": "iso-cc",
-            "type": "any"
+            "type": "string",
+            "format": "default"
           },
           {
-            "constraints": {
-              "enum": [
-                "state",
-                "nation"
-              ]
-            },
-            "format": "default",
             "name": "geotype",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
-            "format": "default",
             "name": "key",
-            "type": "string"
+            "type": "string",
+            "format": "default"
           },
           {
-            "decimalChar": ".",
-            "format": "default",
-            "groupChar": "",
             "name": "value",
-            "type": "number"
-          },
-          {
+            "type": "number",
             "format": "default",
-            "name": "population",
-            "type": "integer"
-          },
-          {
+            "bareNumber": true,
             "decimalChar": ".",
-            "format": "default",
-            "groupChar": "",
-            "name": "quote",
-            "type": "number"
+            "groupChar": ""
           },
           {
-            "format": "%Y-%m-%d",
-            "name": "date",
-            "type": "date"
+            "name": "population",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "quote",
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           }
         ],
-        "primaryKey": [
-          "date",
-          "geo",
-          "key"
+        "missingValues": [
+          ""
         ]
-      }
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "doubleQuote": true,
+        "skipInitialSpace": false
+      },
+      "layout": {
+        "header": true,
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
+      },
+      "last_published": "2021-04-11",
+      "last_update": "2021-04-12"
+    },
+    {
+      "path": "data/de-vaccinations.csv",
+      "hashing": "sha256",
+      "name": "de-vaccinations",
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "stats": {
+        "hash": "3518ea50f7f2d263f61c9d52f6b6ddf0e3baeab0ff770ea57081c70517e11474",
+        "bytes": 1988076,
+        "fields": 8,
+        "rows": 30430
+      },
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "geo",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "iso-cc",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "geotype",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "key",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "population",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "quote",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "format": "default"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "innerpath": "",
+      "compression": "",
+      "control": {},
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "doubleQuote": true,
+        "skipInitialSpace": false
+      },
+      "layout": {
+        "header": true,
+        "headerRows": [
+          1
+        ],
+        "headerJoin": " ",
+        "headerCase": true
+      },
+      "last_published": "2021-04-11",
+      "last_update": "2021-04-12"
     }
   ],
   "sources": [
