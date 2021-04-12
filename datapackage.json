@@ -497,10 +497,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "748bfc902eb02c549f2b1ce001f19cced827aab3a0240a1e31cf3674e283fd26",
-        "bytes": 42878,
+        "hash": "f50dc46a82251e78a3a6c3aa8ed2baf9d46b9306f94a32b5649fa13ee98f7a8b",
+        "bytes": 58478,
         "fields": 7,
-        "rows": 595
+        "rows": 833
       },
       "encoding": "utf-8",
       "schema": {
@@ -578,10 +578,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "f1993e59a9464ff3b42a313e3d8e31eebbff3d466e9e0f13e9a9a2371bffaebf",
-        "bytes": 1960223,
+        "hash": "03a3401ecd1800eee2d0eb2c9191d6216c575e677d9630ad376166918154993b",
+        "bytes": 1978439,
         "fields": 8,
-        "rows": 30158
+        "rows": 30395
       },
       "encoding": "utf-8",
       "schema": {
