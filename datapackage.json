@@ -172,8 +172,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-11",
-      "last_update": "2021-04-12"
+      "last_published": "2021-04-13",
+      "last_update": "2021-04-14"
     },
     {
       "path": "data/de-vaccinations-raw-quote.csv",
@@ -183,9 +183,9 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "55977e5b5f7ae6895724fd9d8a5ad36be3b66e5e15bdfc76b5c9d633cd827681",
-        "bytes": 3297,
-        "fields": 17,
+        "hash": "c38ff2ce536d34e1fd777deb2dacb1deec811c1f4b87cb629765c2d2a5a36691",
+        "bytes": 3880,
+        "fields": 19,
         "rows": 18
       },
       "encoding": "utf-8",
@@ -208,19 +208,19 @@
             "bareNumber": true
           },
           {
+            "name": "Insgesamt über alle Impfstellen_Gesamtzahl einmalig geimpft",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
+            "name": "Insgesamt über alle Impfstellen_Gesamtzahl vollständig geimpft",
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
+          },
+          {
             "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_Gesamt",
-            "type": "integer",
-            "format": "default",
-            "bareNumber": true
-          },
-          {
-            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_<60 Jahre",
-            "type": "integer",
-            "format": "default",
-            "bareNumber": true
-          },
-          {
-            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_60+ Jahre",
             "type": "number",
             "format": "default",
             "bareNumber": true,
@@ -228,9 +228,22 @@
             "groupChar": ""
           },
           {
-            "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_Gesamt",
+            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_<60 Jahre",
             "type": "any",
             "format": "default"
+          },
+          {
+            "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_60+ Jahre",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_Gesamt",
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_<60 Jahre",
@@ -239,21 +252,20 @@
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_60+ Jahre",
-            "type": "number",
-            "format": "default",
-            "bareNumber": true,
-            "decimalChar": ".",
-            "groupChar": ""
+            "type": "any",
+            "format": "default"
           },
           {
             "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_eine Impfung_<60 Jahre",
-            "type": "any",
-            "format": "default"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
             "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_eine Impfung_60+ Jahre",
-            "type": "any",
-            "format": "default"
+            "type": "integer",
+            "format": "default",
+            "bareNumber": true
           },
           {
             "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_vollständig geimpft_<60 Jahre",
@@ -268,25 +280,25 @@
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_<60 Jahre",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_<60 Jahre",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_60+ Jahre",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_60+ Jahre",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_<60 Jahre",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_<60 Jahre",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_60+Jahre",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_60+Jahre",
             "type": "integer",
             "format": "default",
             "bareNumber": true
@@ -314,8 +326,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-11",
-      "last_update": "2021-04-12"
+      "last_published": "2021-04-13",
+      "last_update": "2021-04-14"
     },
     {
       "path": "data/de-vaccinations-raw-totals.csv",
@@ -325,8 +337,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "1536592a572b364af4a5a74898135dd9b940d624bbf06ceafa3eb6ced540bbe9",
-        "bytes": 3900,
+        "hash": "80d3cff8ad106e44738a66237836b7d7c338d38b0f262373fbfcbfa6dad12c67",
+        "bytes": 3987,
         "fields": 22,
         "rows": 18
       },
@@ -404,61 +416,61 @@
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_Gesamt",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Gesamt",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_BioNTech",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_BioNTech",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_Moderna",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_Moderna",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_Impfungen kumulativ_AstraZeneca",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Impfungen kumulativ_AstraZeneca",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_eine Impfung_Differenz zum Vortag",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_eine Impfung_Differenz zum Vortag",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_Gesamt",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Gesamt",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_BioNTech",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_BioNTech",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_Moderna",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_Moderna",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Impfungen kumulativ_AstraZeneca",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Impfungen kumulativ_AstraZeneca",
             "type": "integer",
             "format": "default",
             "bareNumber": true
           },
           {
-            "name": "Impfungen bei niedergelassenen Ärzten_vollständig geimpft_Differenz zum Vortag",
+            "name": "Impfungen der niedergelassenen Ärzteschaft_vollständig geimpft_Differenz zum Vortag",
             "type": "integer",
             "format": "default",
             "bareNumber": true
@@ -486,8 +498,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-11",
-      "last_update": "2021-04-12"
+      "last_published": "2021-04-13",
+      "last_update": "2021-04-14"
     },
     {
       "path": "data/de-vaccinations-current.csv",
@@ -497,10 +509,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "748bfc902eb02c549f2b1ce001f19cced827aab3a0240a1e31cf3674e283fd26",
-        "bytes": 42878,
+        "hash": "c8965508f9f6657ddbb653a770d9886f40a9ce82dbdfa8ea03945ce1fdb384fc",
+        "bytes": 67743,
         "fields": 7,
-        "rows": 595
+        "rows": 867
       },
       "encoding": "utf-8",
       "schema": {
@@ -541,8 +553,11 @@
           },
           {
             "name": "quote",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           }
         ],
         "missingValues": [
@@ -567,8 +582,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-11",
-      "last_update": "2021-04-12"
+      "last_published": "2021-04-13",
+      "last_update": "2021-04-14"
     },
     {
       "path": "data/de-vaccinations.csv",
@@ -578,10 +593,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "f1993e59a9464ff3b42a313e3d8e31eebbff3d466e9e0f13e9a9a2371bffaebf",
-        "bytes": 1960223,
+        "hash": "d21f62b05412fe30b7d811a3976ec35f537ab2d3c78863f3f7c5173b14533be8",
+        "bytes": 2142395,
         "fields": 8,
-        "rows": 30158
+        "rows": 32164
       },
       "encoding": "utf-8",
       "schema": {
@@ -651,8 +666,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-11",
-      "last_update": "2021-04-12"
+      "last_published": "2021-04-13",
+      "last_update": "2021-04-14"
     }
   ],
   "sources": [

@@ -10,6 +10,8 @@ footer: Made with ❤️ in Hamburg/Zurich
 
 # RKI Vaccination Monitoring
 
+> ⚠️ Currently undergoind refactoring due to major data source change, updating data will be back soon, see [#13](https://github.com/n0rdlicht/rki-vaccination-scraper/issues/13) for details.
+
 [![goodtables.io](https://goodtables.io/badge/github/n0rdlicht/rki-vaccination-scraper.svg)](https://goodtables.io/github/n0rdlicht/rki-vaccination-scraper)
 
 Project to archive and track the [state level vaccination data](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html) published by the Robert-Koch-Institut daily.
