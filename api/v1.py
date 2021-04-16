@@ -91,7 +91,7 @@ def api(dataset):
             }, cls=DecimalEncoder),
             mimetype='application/json',
             headers={
-                "Cache-Control": "s-maxage=300, stale-while-revalidate=59"
+                "Cache-Control": "s-maxage=600, stale-while-revalidate=59"
             },
             status=200)
 
