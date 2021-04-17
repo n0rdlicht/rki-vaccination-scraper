@@ -1,4 +1,7 @@
-all: update
+all: init update
 
 update:
-	python3 vaccination.py
+	poetry run python vaccination.py
+
+init:
+	poetry install

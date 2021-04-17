@@ -18,10 +18,16 @@ jobs:
         with:
           python-version: 3.9
           architecture: x64
-      - name: Install Python dependencies
+      - name: Install Poetry dependencies
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: 1.1.6
-      - run: poetry run python vaccination.py
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - run: make
       # - name: push
       #   uses: actions-x/commit@v2
