@@ -29,5 +29,5 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
       - run: make
-      # - name: push
-      #   uses: actions-x/commit@v2
+      - name: push
+        uses: actions-x/commit@v2
