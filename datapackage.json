@@ -7,7 +7,12 @@
     }
   ],
   "homepage": "https://github.com/n0rdlicht/rki-vaccination-scraper",
-  "keywords": ["COVID-19", "RKI", "Germany", "Vaccination"],
+  "keywords": [
+    "COVID-19",
+    "RKI",
+    "Germany",
+    "Vaccination"
+  ],
   "license": "ODC-PDDL-1.0",
   "licenses": [
     {
@@ -46,7 +51,9 @@
             "bareNumber": true
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -60,7 +67,9 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       }
@@ -141,7 +150,9 @@
             "bareNumber": true
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -155,12 +166,14 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-16",
-      "last_update": "2021-04-15"
+      "last_published": "2021-04-17",
+      "last_update": "2021-04-16"
     },
     {
       "path": "data/de-vaccinations-raw-quote.csv",
@@ -170,8 +183,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "063901753a2721a951f7b31c38db248c1c79d5e8ed35de48487a31bb09061cb7",
-        "bytes": 3907,
+        "hash": "3b10168a8ae118f2f7fd003090f0066ed23cb022dfdee6bb934d07cd64f8fbe9",
+        "bytes": 3904,
         "fields": 19,
         "rows": 18
       },
@@ -291,7 +304,9 @@
             "bareNumber": true
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -305,12 +320,14 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-16",
-      "last_update": "2021-04-15"
+      "last_published": "2021-04-17",
+      "last_update": "2021-04-16"
     },
     {
       "path": "data/de-vaccinations-raw-totals.csv",
@@ -320,8 +337,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "e2d9710ffe3a79f908d9a9dcfc08a7a0f13980fc82cd0cb659dfd187100ea41c",
-        "bytes": 4033,
+        "hash": "f12cb7d5797570edf07bd6fa3b629be079226d15a8aa71e38d95e672a4ffcf01",
+        "bytes": 4030,
         "fields": 22,
         "rows": 18
       },
@@ -459,7 +476,9 @@
             "bareNumber": true
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -473,12 +492,14 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-16",
-      "last_update": "2021-04-15"
+      "last_published": "2021-04-17",
+      "last_update": "2021-04-16"
     },
     {
       "path": "data/de-vaccinations-current.csv",
@@ -488,8 +509,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "fc95f413a3b8c1a00f55e03d69cac60aee2ec676313d980f172e770de3f5d7fb",
-        "bytes": 67938,
+        "hash": "ec70ccc9a75088f957a27e442a0270af1957b1f4fcd718fa656353819ca56e9e",
+        "bytes": 67926,
         "fields": 7,
         "rows": 867
       },
@@ -539,7 +560,9 @@
             "groupChar": ""
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -553,12 +576,14 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-16",
-      "last_update": "2021-04-15"
+      "last_published": "2021-04-17",
+      "last_update": "2021-04-16"
     },
     {
       "path": "data/de-vaccinations.csv",
@@ -568,10 +593,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "1cce8010e7597c0b857ff53f609fb91b4489a65d15b2ef87ae32ad583d7335b8",
-        "bytes": 2297063,
+        "hash": "6e0900894d4c6c6cdcb5cf1b15fb220123b95a5fa5e1f7d4a48a0434d9f98353",
+        "bytes": 2374479,
         "fields": 8,
-        "rows": 33898
+        "rows": 34765
       },
       "encoding": "utf-8",
       "schema": {
@@ -619,7 +644,9 @@
             "format": "default"
           }
         ],
-        "missingValues": [""]
+        "missingValues": [
+          ""
+        ]
       },
       "innerpath": "",
       "compression": "",
@@ -633,12 +660,14 @@
       },
       "layout": {
         "header": true,
-        "headerRows": [1],
+        "headerRows": [
+          1
+        ],
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-04-16",
-      "last_update": "2021-04-15"
+      "last_published": "2021-04-17",
+      "last_update": "2021-04-16"
     }
   ],
   "sources": [
