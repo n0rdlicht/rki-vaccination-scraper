@@ -16,13 +16,12 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.9
           architecture: x64
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
         with:
           path: "requirements.txt"
       - run: make all
-      - run: make validate
       - name: push
         uses: actions-x/commit@v2

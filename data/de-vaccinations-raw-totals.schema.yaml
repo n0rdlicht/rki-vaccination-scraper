@@ -1,0 +1,111 @@
+fields:
+  - bareNumber: true
+    format: default
+    name: RS
+    type: integer
+  - format: default
+    name: Bundesland
+    type: string
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_eine Impfung_Impfungen\
+      \ kumulativ_Gesamt"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_eine Impfung_Impfungen\
+      \ kumulativ_BioNTech"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_eine Impfung_Impfungen\
+      \ kumulativ_Moderna"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_eine Impfung_Impfungen\
+      \ kumulativ_AstraZeneca"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_eine Impfung_Differenz\
+      \ zum Vortag"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_vollst\xE4ndig\
+      \ geimpft_Impfungen kumulativ_Gesamt"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_vollst\xE4ndig\
+      \ geimpft_Impfungen kumulativ_BioNTech"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_vollst\xE4ndig\
+      \ geimpft_Impfungen kumulativ_Moderna"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_vollst\xE4ndig\
+      \ geimpft_Impfungen kumulativ_AstraZeneca"
+    type: integer
+  - bareNumber: true
+    format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams, Krankenh\xE4usern_vollst\xE4ndig\
+      \ geimpft_Differenz zum Vortag"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_Impfungen kumulativ_Gesamt"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_Impfungen kumulativ_BioNTech"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_Impfungen kumulativ_Moderna"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_Impfungen kumulativ_AstraZeneca"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_Differenz zum Vortag"
+    type: integer
+  - format: default
+    name:
+      "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_Impfungen\
+      \ kumulativ_Gesamt"
+    type: integer
+  - format: default
+    name:
+      "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_Impfungen\
+      \ kumulativ_BioNTech"
+    type: integer
+  - format: default
+    name:
+      "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_Impfungen\
+      \ kumulativ_Moderna"
+    type: integer
+  - format: default
+    name:
+      "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_Impfungen\
+      \ kumulativ_AstraZeneca"
+    type: integer
+  - format: default
+    name:
+      "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_Differenz\
+      \ zum Vortag"
+    type: integer
+missingValues:
+  - ""
+  - "-"

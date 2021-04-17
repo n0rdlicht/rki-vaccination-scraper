@@ -5,9 +5,8 @@ description = ""
 authors = ["Thorben Westerhuys <thorben.westerhuys@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-goodtables = "^2.5.2"
-datapackage-pipelines = "^2.2.5"
+python = "^3.9"
+frictionless = "^4.6.0"
 
 [tool.poetry.dev-dependencies]
 

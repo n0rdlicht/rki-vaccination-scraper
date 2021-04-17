@@ -1,0 +1,133 @@
+profile: tabular-data-resource
+format: csv
+fields:
+  - format: default
+    name: RS
+    type: integer
+    constraints:
+      required: true
+      unique: true
+  - format: default
+    name: Bundesland
+    type: string
+    constraints:
+      required: true
+      unique: true
+      enum:
+        - Baden-Württemberg
+        - Bayern
+        - Berlin
+        - Brandenburg
+        - Bremen
+        - Hamburg
+        - Hessen
+        - Mecklenburg-Vorpommern
+        - Niedersachsen
+        - Nordrhein-Westfalen
+        - Rheinland-Pfalz
+        - Saarland
+        - Sachsen
+        - Sachsen-Anhalt
+        - Schleswig-Holstein
+        - Thüringen
+        - Impfzentren Bund*
+        - Gesamt
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Gesamtzahl bisher verabreichter Impfungen"
+    type: integer
+    constraints:
+      required: true
+      minimum: 0
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Gesamtzahl einmalig geimpft"
+    type: integer
+    constraints:
+      required: true
+      minimum: 0
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Gesamtzahl vollständig geimpft"
+    type: integer
+    constraints:
+      required: true
+      minimum: 0
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Impfquote mit einer Impfung_Gesamt"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Impfquote mit einer Impfung_<60 Jahre"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Impfquote mit einer Impfung_60+ Jahre"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name: "Insgesamt \xFCber alle Impfstellen_Impfquote vollst\xE4ndig geimpft_Gesamt"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name:
+      "Insgesamt \xFCber alle Impfstellen_Impfquote vollst\xE4ndig geimpft_<60\
+      \ Jahre"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name:
+      "Insgesamt \xFCber alle Impfstellen_Impfquote vollst\xE4ndig geimpft_60+\
+      \ Jahre"
+    type: number
+    constraints:
+      required: true
+      minimum: 0
+      maximum: 100
+  - format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams und Krankenh\xE4usern_eine Impfung_<60\
+      \ Jahre"
+    type: integer
+  - format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams und Krankenh\xE4usern_eine Impfung_60+\
+      \ Jahre"
+    type: integer
+  - format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams und Krankenh\xE4usern_vollst\xE4\
+      ndig geimpft_<60 Jahre"
+    type: integer
+  - format: default
+    name:
+      "Impfungen in Impfzentren, Mobilen Teams und Krankenh\xE4usern_vollst\xE4\
+      ndig geimpft_60+Jahre"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_<60 Jahre"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_eine Impfung_60+ Jahre"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_<60 Jahre"
+    type: integer
+  - format: default
+    name: "Impfungen der niedergelassenen \xC4rzteschaft_vollst\xE4ndig geimpft_60+Jahre"
+    type: integer
+missingValues:
+  - ""
+  - "-"
