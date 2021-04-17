@@ -6,7 +6,7 @@ authors = ["Thorben Westerhuys <thorben.westerhuys@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-frictionless = "^4.6.0"
+frictionless = {extras = ["excel"], version = "^4.7.1"}
 
 [tool.poetry.dev-dependencies]
 
