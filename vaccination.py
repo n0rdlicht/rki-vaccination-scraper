@@ -8,14 +8,13 @@ import petl
 from datetime import datetime, timedelta
 from dateutil import parser
 
-try:
-    r = requests.get(
-        'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile')
-    publishdate = parser.parse(r.headers["Last-Modified"])
-    datadate = publishdate - timedelta(1)
-except:
-    publishdate = datetime.now()
-    datadate = publishdate - timedelta(1)
+import requests
+
+
+r = requests.get(
+    'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile')
+publishdate = parser.parse(r.headers["Last-Modified"])
+datadate = publishdate - timedelta(1)
 
 impfquote = Resource(
     'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile', dialect=ExcelDialect(sheet=2), layout=Layout(header_rows=[1, 2, 3, 4], header_join='_', limit_rows=18), schema=Schema("data/de-vaccinations-raw-quote.schema.yaml"), )
