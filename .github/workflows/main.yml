@@ -18,16 +18,24 @@ jobs:
         with:
           python-version: 3.9
           architecture: x64
-      - name: Install Poetry dependencies
-        uses: abatilo/actions-poetry@v2.0.0
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.1.4
         with:
-          poetry-version: 1.1.6
+          virtualenvs-create: true
+          virtualenvs-in-project: true
       - name: Load cached venv
         id: cached-poetry-dependencies
         uses: actions/cache@v2
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-      - run: make
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+      - name: Install libraries
+        run: poetry install --no-interaction
+      - run: |
+          source .venv/bin/activate
+          python vaccination.py
       - name: push
         uses: actions-x/commit@v2
