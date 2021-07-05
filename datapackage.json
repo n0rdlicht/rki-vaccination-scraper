@@ -172,8 +172,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-06-30",
-      "last_update": "2021-06-29"
+      "last_published": "2021-07-05",
+      "last_update": "2021-07-04"
     },
     {
       "path": "data/de-vaccinations-raw-quote.csv",
@@ -183,8 +183,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "aaab8fda688dc9acdd3110da1bb889a7d4d34f0722c4fd06b36a4d8821a9296d",
-        "bytes": 2501,
+        "hash": "a6243fb0a1557c458b2d10ea35a966220f1d1363531c3e395636cd57a67c678a",
+        "bytes": 2546,
         "fields": 19,
         "rows": 18
       },
@@ -229,18 +229,27 @@
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_<60 Jahre",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote mit einer Impfung_60+ Jahre",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_Gesamt",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_<60 Jahre",
@@ -252,8 +261,11 @@
           },
           {
             "name": "Insgesamt über alle Impfstellen_Impfquote vollständig geimpft_60+ Jahre",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           },
           {
             "name": "Impfungen in Impfzentren, Mobilen Teams und Krankenhäusern_eine Impfung_<60 Jahre",
@@ -318,8 +330,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-06-30",
-      "last_update": "2021-06-29"
+      "last_published": "2021-07-05",
+      "last_update": "2021-07-04"
     },
     {
       "path": "data/de-vaccinations-raw-totals.csv",
@@ -329,8 +341,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "ab2a3151d38ed11f001b4dc17ec8775e63dd0bed8028f85bf2d653449f379e4f",
-        "bytes": 3735,
+        "hash": "9596fbac0dba623f824311d5d1c56e0192d2e3e9899dbef99552ae6eeb86ad9f",
+        "bytes": 3708,
         "fields": 22,
         "rows": 18
       },
@@ -482,8 +494,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-06-30",
-      "last_update": "2021-06-29"
+      "last_published": "2021-07-05",
+      "last_update": "2021-07-04"
     },
     {
       "path": "data/de-vaccinations-current.csv",
@@ -493,8 +505,8 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "fa78891c33f4d1924bee73443b925b653606447d0716f0932d1c01a8d32acabf",
-        "bytes": 50807,
+        "hash": "24c80bad4294e7852bede49059847035939617f397e63b75eed3be256f0d61cc",
+        "bytes": 51343,
         "fields": 7,
         "rows": 816
       },
@@ -537,8 +549,11 @@
           },
           {
             "name": "quote",
-            "type": "any",
-            "format": "default"
+            "type": "number",
+            "format": "default",
+            "bareNumber": true,
+            "decimalChar": ".",
+            "groupChar": ""
           }
         ],
         "missingValues": [
@@ -563,8 +578,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-06-30",
-      "last_update": "2021-06-29"
+      "last_published": "2021-07-05",
+      "last_update": "2021-07-04"
     },
     {
       "path": "data/de-vaccinations.csv",
@@ -574,10 +589,10 @@
       "scheme": "file",
       "format": "csv",
       "stats": {
-        "hash": "61b912384b2e0ffc40fc564f0a0a4ec387626f6985e8ec7172d1af32f939646a",
-        "bytes": 6032220,
+        "hash": "583d9d5b564844048468e1ad3c6b2ef7a592551d9cf29ebbef45f84e5be2f4b1",
+        "bytes": 6092492,
         "fields": 8,
-        "rows": 77809
+        "rows": 78625
       },
       "encoding": "utf-8",
       "schema": {
@@ -647,8 +662,8 @@
         "headerJoin": " ",
         "headerCase": true
       },
-      "last_published": "2021-06-30",
-      "last_update": "2021-06-29"
+      "last_published": "2021-07-05",
+      "last_update": "2021-07-04"
     }
   ],
   "sources": [
